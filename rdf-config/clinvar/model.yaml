@@ -1,0 +1,6 @@
+- ClinVar clinvar:209597:
+  - a: cvo:VariationArchiveType
+  - cvo:variation_id:
+    - id: 18390
+  - rdfs:label:
+    - label: NM_000059.3(BRCA2):c.-764A>G

@@ -1,0 +1,29 @@
+#- BioSample
+- ChEBI:
+  - a: tio:Dataset
+  - tio:TIO_000076*:
+    - rhea: Rhea
+- ClinVar
+  - a: tio:Dataset
+  - tio:TIO_000010:
+    - medgen: MedGen
+  - tio:TIO_000059:
+    - togovar: TogoVar
+#- DbSNP
+#- Glytoucan
+#- GO
+#- HGNC
+#- Homologene
+#- MedGen
+#- MeSH
+#- Mondo
+#- Nando
+#- PDB
+#- PubMed
+- Rhea:
+  - a: tio:Dataset
+  - tio:TIO_000077:
+    - chebi: ChEBI
+#- TogoVar
+#- UniProt
+
