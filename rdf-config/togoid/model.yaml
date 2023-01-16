@@ -3,7 +3,7 @@
   - a: tio:Dataset
   - tio:TIO_000076*:
     - rhea: Rhea
-- ClinVar
+- ClinVar:
   - a: tio:Dataset
   - tio:TIO_000010:
     - medgen: MedGen
