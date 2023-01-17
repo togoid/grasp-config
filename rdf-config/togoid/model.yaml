@@ -1,29 +1,222 @@
-#- BioSample
+- BioSample:
+  - a: tio:Dataset
 - ChEBI:
   - a: tio:Dataset
+  - tio:TIO_000002*:
+    - chebi-chembl_compound: ChEMBLCompound
+  - tio:TIO_000001*:
+    - chebi-pubchem_compound: PubChemCompound
   - tio:TIO_000076*:
-    - rhea: Rhea
+    - chebi-rhea: Rhea
+- ChEMBLCompound:
+  - a: tio:Dataset
+  - tio:TIO_000002*:
+    - chembl_compound-chebi: ChEBI
+  - tio:TIO_000010*:
+    - chembl_compound-mesh: MeSH
+  - tio:TIO_000001*:
+    - chembl_compound-pubchem_compound: PubChemCompound
+  - tio:TIO_000032*:
+    - chembl_compound-pubmed: PubMed
 - ClinVar:
   - a: tio:Dataset
-  - tio:TIO_000010:
-    - medgen: MedGen
-  - tio:TIO_000059:
-    - togovar: TogoVar
-#- DbSNP
-#- Glytoucan
-#- GO
-#- HGNC
-#- Homologene
-#- MedGen
-#- MeSH
-#- Mondo
-#- Nando
-#- PDB
-#- PubMed
+  - tio:TIO_000010*:
+    - clinvar-medgen: MedGen
+  - tio:TIO_000059*:
+    - clinvar-togovar: TogoVar
+- DbSNP:
+  - a: tio:Dataset
+  - tio:TIO_000003*:
+    - dbsnp-togovar: TogoVar
+  - tio:TIO_000062*:
+    - dbsnp-uniprot: UniProt
+- EnsemblGene:
+  - a: tio:Dataset
+  - tio:TIO_000035*:
+    - ensembl_gene-ensembl_transcript: EnsemblTranscript
+  - tio:TIO_000001*:
+    - ensembl_gene-hgnc: HGNC
+  - tio:TIO_000001*:
+    - ensembl_gene-ncbigene: NCBIGene
+  - tio:TIO_000025*:
+    - ensembl_gene-uniprot: UniProt
+  - tio:TIO_000063*:
+    - ensembl_gene-togovar: TogoVar
+- EnsemblTranscript:
+  - a: tio:Dataset
+  - tio:TIO_000034*:
+    - ensembl_transcript-ensembl_gene: EnsemblGene
+  - tio:TIO_000004*:
+    - ensembl_transcript-go: GO
+  - tio:TIO_000034*:
+    - ensembl_transcript-hgnc: HGNC
+  - tio:TIO_000034*:
+    - ensembl_transcript-ncbigene: NCBIGene
+  - tio:TIO_000063*:
+    - ensembl_transcript-togovar: TogoVar
+  - tio:TIO_000036*:
+    - ensembl_transcript-uniprot: UniProt
+- Glytoucan:
+  - a: tio:Dataset
+  - tio:TIO_000060*:
+    - glytoucan-uniprot: UniProt
+  - tio:TIO_000001*:
+    - glytoucan-pubchem_compound: PubChemCompound
+- GO:
+  - a: tio:Dataset
+  - tio:TIO_000007*:
+    - go-ensembl_transcript: EnsemblTranscript
+  - tio:TIO_000007*:
+    - go-ncbigene: NCBIGene
+  - tio:TIO_000007*:
+    - go-pdb: PDB
+  - tio:TIO_000007*:
+    - go-rhea: Rhea
+  - tio:TIO_000007*:
+    - go-uniprot: UniProt
+- HGNC:
+  - a: tio:Dataset
+  - tio:TIO_000001*:
+    - hgnc-ensembl_gene: EnsemblGene
+  - tio:TIO_000035*:
+    - hgnc-ensembl_transcript: EnsemblTranscript
+  - tio:TIO_000001*:
+    - hgnc-ncbigene: NCBIGene
+  - tio:TIO_000032*:
+    - hgnc-pubmed: PubMed
+  - tio:TIO_000025*:
+    - hgnc-uniprot: UniProt
+  - tio:TIO_000063*:
+    - hgnc-togovar: TogoVar
+- HomoloGene:
+  - a: tio:Dataset
+  - tio:TIO_000018*:
+    - homologene-ncbigene: NCBIGene
+- HPO:
+  - a: tio:Dataset
+  - tio:TIO_000001*:
+    - hp-medgen: MedGen
+  - tio:TIO_000001*:
+    - hp-mondo: Mondo
+- MedGen:
+  - a: tio:Dataset
+  - tio:TIO_000011*:
+    - medgen-clinvar: ClinVar
+  - tio:TIO_000001*:
+    - medgen-hp: HPO
+  - tio:TIO_000001*:
+    - medgen-mesh: MeSH
+  - tio:TIO_000001*:
+    - medgen-mondo: Mondo
+  - tio:TIO_000011*:
+    - medgen-ncbigene: NCBIGene
+- MeSH:
+  - a: tio:Dataset
+  - tio:TIO_000011*:
+    - mesh-chembl_compound: ChEMBLCompound
+  - tio:TIO_000001*:
+    - mesh-medgen: MedGen
+  - tio:TIO_000001*:
+    - mesh-mondo: Mondo
+- Mondo:
+  - a: tio:Dataset
+  - tio:TIO_000001*:
+    - mondo-medgen: MedGen
+  - tio:TIO_000001*:
+    - mondo-hp: HPO
+  - tio:TIO_000001*:
+    - mondo-mesh: MeSH
+  - tio:TIO_000001*:
+    - mondo-nando: Nando
+- Nando:
+  - a: tio:Dataset
+  - tio:TIO_000001*:
+    - nando-mondo: Mondo
+- NCBIGene:
+  - a: tio:Dataset
+  - tio:TIO_000001*:
+    - ncbigene-ensembl_gene: EnsemblGene
+  - tio:TIO_000001*:
+    - ncbigene-hgnc: HGNC
+  - tio:TIO_000019*:
+    - ncbigene-homologene: HomoloGene
+  - tio:TIO_000010*:
+    - ncbigene-medgen: MedGen
+  - tio:TIO_000035*:
+    - ncbigene-ensembl_transcript: EnsemblTranscript
+  - tio:TIO_000004*:
+    - ncbigene-go: GO
+  - tio:TIO_000063*:
+    - ncbigene-togovar: TogoVar
+  - tio:TIO_000025*:
+    - ncbigene-uniprot: UniProt
+- PDB:
+  - a: tio:Dataset
+  - tio:TIO_000004*:
+    - pdb-go: GO
+  - tio:TIO_000027*:
+    - pdb-uniprot: UniProt
+- PubChemCompound:
+  - a: tio:Dataset
+  - tio:TIO_000001*:
+    - pubchem_compound-chembl_compound: ChEMBLCompound
+  - tio:TIO_000001*:
+    - pubchem_compound-chebi: ChEBI
+  - tio:TIO_000001*:
+    - pubchem_compound-glytoucan: Glytoucan
+- PubMed:
+  - a: tio:Dataset
+  - tio:TIO_000033*:
+    - pubmed-chembl_compound: ChEMBLCompound
+  - tio:TIO_000033*:
+    - pubmed-hgnc: HGNC
+  - tio:TIO_000033*:
+    - pubmed-rhea: Rhea
+  - tio:TIO_000033*:
+    - pubmed-togovar: TogoVar
 - Rhea:
   - a: tio:Dataset
-  - tio:TIO_000077:
-    - chebi: ChEBI
-#- TogoVar
-#- UniProt
-
+  - tio:TIO_000077*:
+    - rhea-chebi: ChEBI
+  - tio:TIO_000004*:
+    - rhea-go: GO
+  - tio:TIO_000032*:
+    - rhea-pubmed: PubMed
+  - tio:TIO_000077*:
+    - rhea-uniprot: UniProt
+- TogoVar:
+  - a: tio:Dataset
+  - tio:TIO_000058*:
+    - togovar-clinvar: ClinVar
+  - tio:TIO_000003*:
+    - togovar-dbsnp: DbSNP
+  - tio:TIO_000062*:
+    - togovar-ensembl_gene: EnsemblGene
+  - tio:TIO_000062*:
+    - togovar-ensembl_transcript: EnsemblTranscript
+  - tio:TIO_000062*:
+    - togovar-hgnc: HGNC
+  - tio:TIO_000062*:
+    - togovar-ncbigene: NCBIGene
+  - tio:TIO_000032*:
+    - togovar-pubmed: PubMed
+- UniProt:
+  - a: tio:Dataset
+  - tio:TIO_000024*:
+    - uniprot-ensembl_gene: EnsemblGene
+  - tio:TIO_000061*:
+    - uniprot-glytoucan: Glytoucan
+  - tio:TIO_000024*:
+    - uniprot-hgnc: HGNC
+  - tio:TIO_000026*:
+    - uniprot-pdb: PDB
+  - tio:TIO_000076*:
+    - uniprot-rhea: Rhea
+  - tio:TIO_000063*:
+    - uniprot-dbsnp: DbSNP
+  - tio:TIO_000037*:
+    - uniprot-ensembl_transcript: EnsemblTranscript
+  - tio:TIO_000004*:
+    - uniprot-go: GO
+  - tio:TIO_000024*:
+    - uniprot-ncbigene: NCBIGene
