@@ -1,6 +1,6 @@
 - UniProt up:P06493:
   - a: core:Protein
-  - core:recommendedName*:
+  - core:recommendedName?:  # TrEMBL の場合は core:submittedName なので SPARQL クエリに property path で追記 (OPTIONAL ははずす) 
     - []:
       - a: core:Structured_Name
       - core:fullName:
