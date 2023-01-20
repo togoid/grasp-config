@@ -4,5 +4,5 @@
     - id: 9606
   - rdfs:label:
     - label: "Homo sapiens"
-  - ddbj:genbankCommonName:
+  - ddbj:genbankCommonName?:
     - common_name: "human"
