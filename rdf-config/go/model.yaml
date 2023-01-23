@@ -4,9 +4,7 @@
     - id: "GO:0044255"
   - rdfs:label:
     - label: "cellular lipid metabolic process"
-  - obo:IAO_0000115+: # definition
+  - obo:IAO_0000115:
     - definition: "The chemical reactions and pathways involving lipids, as carried out by individual cells."
-  - oboinowl:hasExactSynonym*:
-    - synonym: "cellular lipid metabolism"
   - oboinowl:hasOBONamespace:
     - namespace: "biological_process"
