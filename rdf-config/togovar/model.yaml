@@ -2,13 +2,10 @@
     - a: obo:SO_0001483 # SNV
 
     - rdfs:label:
-        - variant_label: 7-127254587-G-A
+        - label: 7-127254587-G-A
 
     - dct:identifier:
-        - variant_identifier: tgv30913364
-
-    - rdfs:seeAlso*:
-        - dbsnp: dbsnp:rs114202595
+        - id: tgv30913364
 
     - tgvo:hasConsequence+:
         - []:
