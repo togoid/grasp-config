@@ -1,1 +1,4 @@
-endpoint: https://togovar.biosciencedbc.jp/sparql
+endpoint:
+  - https://integbio.jp/rdf/ncbi/sparql
+  - graph:
+    - http://rdf.integbio.jp/dataset/pubmed
