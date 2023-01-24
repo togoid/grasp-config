@@ -1,5 +1,7 @@
 - Pubmed pubmed:31558841:
-  - dct:title:
-    - label: "Functional variants in ADH1B and ALDH2 are non-additively associated with all-cause mortality in Japanese population."
   - bibo:pmid:
     - id: "31558841"
+  - dct:source:
+    - label: "Eur J Hum Genet. 2020-03;28(3):378-382."
+  - dct:title*:
+    - title: "Functional variants in ADH1B and ALDH2 are non-additively associated with all-cause mortality in Japanese population."
