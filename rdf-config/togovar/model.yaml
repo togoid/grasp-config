@@ -1,17 +1,14 @@
-- SNV hco:7/GRCh37#127254587-G-A:
+- SNV hco:7/GRCh38#127614533-G-A:
     - a: obo:SO_0001483 # SNV
-
     - rdfs:label:
-        - label: 7-127254587-G-A
-
+        - label: 7-127614533-G-A
     - dct:identifier:
         - id: tgv30913364
-
     - tgvo:hasConsequence+:
         - []:
             - a+: obo:SO_0001583 # missense_variant
             - rdfs:label:
-                - hgvs_g: 7:g.127254587G>A
+                - hgvs_g: 7:g.127614533G>A
             - rdfs:label:
                 - hgvs_p: ENSP00000344297.3:p.Arg129Trp
             - rdfs:label:
