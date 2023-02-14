@@ -1,0 +1,24 @@
+- UniProt up:P06493:
+  - a: core:Protein
+  - core:recommendedName?:  # TrEMBL の場合は core:submittedName なので SPARQL クエリに property path で追記 (OPTIONAL ははずす) 
+    - []:
+      - a: core:Structured_Name
+      - core:fullName:
+        - label: "Cyclin-dependent kinase 1"
+      - core:shortName*:
+        - short_label: "CDK1"
+  - core:mnemonic:
+    - mnemonic: "CDK1_HUMAN"
+  - core:reviewed:
+    - reviewed: true
+  - core:existence:
+    - existence: core:Evidence_at_Protein_Level_Existence
+  - core:sequence:
+    - []:
+      - a: core:Simple_Sequence
+      - rdf:value:
+        - sequence: "MEDYTKIEKIGEGTYGVVYKGRHKTTGQVVAMKKIRLESEEEGVPSTAIREISLLKELRHPNIVSLQDVLMQDSRLYLIFEFLSMDLKKYLDSIPPGQYMDSSLVKSYLYQILQGIVFCHSRRVLHRDLKPQNLLIDDKGTIKLADFGLARAFGIPIRVYTHEVVTLWYRSPEVLLGSARYSTPVDIWSIGTIFAELATKKPLFHGDSEIDQLFRIFRALGTPNNEVWPEVESLQDYKNTFPKWKPGSLASHVKNLDENGLDLLSKMLIYDPAKRISGKMALNHPYFNDLDNQIKKM"
+      - core:mass:
+        - mass: 34095
+  - core:organism:
+    - organism: taxonomy:9606

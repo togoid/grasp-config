@@ -1,0 +1,8 @@
+- HomoloGene homologene:3:
+  - a: orth:OrthologsCluster
+  - dct:identifier:
+    - id: 3
+  - rdfs:label:
+    - label: "Bilateria"
+  - rdfs:comment:
+    - comment: "Gene conserved in Bilateria"

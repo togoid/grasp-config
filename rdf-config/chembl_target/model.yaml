@@ -25,5 +25,3 @@
     - id: "CHEMBL1907594"
   - rdfs:label:
     - label: "Neuronal acetylcholine receptor; alpha3/beta4"
-  - cco:targetType:
-    - assay_target_type: "PROTEIN COMPLEX"

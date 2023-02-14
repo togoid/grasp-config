@@ -1,0 +1,18 @@
+- Glycan glycanid:G00054MO:
+  - a:
+      - glycan:Saccharide
+  - glytoucan:has_primary_id:
+      - id: G0054MO
+  - glycan:has_glycosequence:
+      - []:
+        - a: glycan:Glycosequence
+        - glycan:has_sequence:
+            - label: "WURCS=2.0/4,4,3/[a2122h-1b_1-5_2*NCC/3=O][a1221m-1a_1-5][a2112h-1b_1-5][Aad21122h-2a_2-6_5*NCC/3=O]/1-2-3-4/a3-b1_a4-c1_c3-d2"
+        - glycan:in_carbohydrate_format:
+            - carbohydrate_format: glycan:carbohydrate_format_wurcs
+  - glytoucan:has_derivatized_mass:
+      - []:
+        - a: glytoucan:derivatized_mass
+        - glytoucan:has_mass:
+            - mass: 820.296
+

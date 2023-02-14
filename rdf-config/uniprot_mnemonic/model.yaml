@@ -1,0 +1,9 @@
+- UniProtMnemonic:
+  - a: core:Protein
+  - core:recommendedName?:  # TrEMBL の場合は core:submittedName なので SPARQL クエリに property path で追記 (OPTIONAL ははずす) 
+    - []:
+      - a: core:Structured_Name
+      - core:fullName:
+        - label: "Cyclin-dependent kinase 1"
+  - core:mnemonic:
+    - id: "CDK1_HUMAN"

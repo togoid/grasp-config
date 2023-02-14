@@ -1,0 +1,5 @@
+endpoint:
+  - https://integbio.jp/rdf/sparql
+  - graph:
+    - http://rdf.integbio.jp/dataset/hgnc
+

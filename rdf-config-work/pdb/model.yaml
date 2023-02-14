@@ -1,0 +1,6 @@
+- PDB pdb:5KE7:
+  - a: pdbo:datablock
+  - dc:title:
+    - label: "mouse Klf4 ZnF1-3 and TpG/MpA sequence DNA complex structure"
+  - dct:identifier:
+    - id: "5KE7"

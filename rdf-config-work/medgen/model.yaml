@@ -1,0 +1,6 @@
+- MedGen medgen:C0023467:
+  - a: mo:ConceptID
+  - dct:identifier:
+    - id: "C0023467"
+  - rdfs:label:
+    - label: "Acute myeloid leukemia"

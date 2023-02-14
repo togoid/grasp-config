@@ -1,0 +1,5 @@
+rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+dct: <http://purl.org/dc/terms/>
+hco: <http://identifiers.org/hco/>
+gvo: <http://genome-variation.org/resource#>
+tgvo: <http://togovar.biosciencedbc.jp/vocabulary/>

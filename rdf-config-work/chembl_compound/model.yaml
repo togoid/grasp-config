@@ -1,0 +1,55 @@
+- ChemblCompound chembl:CHEMBL667:
+  - a: cco:SmallMolecule   #chembl_molecule:CHEMBL10010
+  - a: cco:ProteinMolecule   #chembl_molecule:CHEMBL103817
+  - a: cco:UnknownSubstance
+  - a: cco:Oligosaccharide   #chembl_molecule:CHEMBL1201448
+  - a: cco:UnclassifiedSubstance   #chembl_molecule:CHEMBL1256399
+  - a: cco:CellTherapy   #chembl_molecule:CHEMBL1237024
+  - a: cco:Enzyme   #chembl_molecule:CHEMBL1201459
+  - a: cco:Antibody   #chembl_molecule:CHEMBL1742983
+  - a: cco:Oligonucleotide   #chembl_molecule:CHEMBL2103797
+  - a: cco:UnclassifiedMolecule   #chembl_molecule:CHEMBL2108332 type=Gene
+  - cco:chemblId:
+    - id: "CHEMBL667"
+  - skos:prefLabel:
+    - label: "ACETYLCHOLINE"
+  - skos:altLabel*:
+    - altlabel: "2-(dimethylamino)ethyl acetate"
+  - dct:description*:
+    - description: "Alacizumab pegol (humanized F(ab')2)"   #chembl_molecule:CHEMBL1742983
+  - cco:substanceType:
+    - substance_type: "Small molecule"
+  - cco:atcClassification*:
+    - atc: "S01EB09"
+  - cco:highestDevelopmentPhase:
+    - drug_development_phase: 4
+  - sio:SIO_000008*:
+    - []:
+      - a: sio:CHEMINF_000113
+      - sio:SIO_000300:   # has value
+        - inchi: "InChI=1S/C7H16NO2/c1-7(9)10-6-5-8(2,3)4/h5-6H2,1-4H3/q+1"
+  - sio:SIO_000008*:
+    - []:
+      - a: sio:CHEMINF_000059
+      - sio:SIO_000300: # has value
+        - inchikey: "OIPILFWXSMYKGL-UHFFFAOYSA-N"
+  - sio:SIO_000008*:
+    - []:
+      - a: sio:CHEMINF_000018
+      - sio:SIO_000300: # has value
+        - smiles: "CC(=O)OCC[N+](C)(C)C"
+  - sio:SIO_000008*:
+    - []:
+      - a: sio:CHEMINF_000216
+      - sio:SIO_000300: # has value
+        - mass: 146.21
+  - sio:SIO_000008*:
+    - []:
+      - a: sio:CHEMINF_000218
+      - sio:SIO_000300: # has value
+        - monoisotopicmass: 146.118
+  - sio:SIO_000008*:
+    - []:
+      - a: sio:CHEMINF_000042
+      - sio:SIO_000300: # has value
+        - formula: "C7H16NO2+"

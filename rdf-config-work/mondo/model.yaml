@@ -1,0 +1,8 @@
+- Mondo obo:MONDO_0020680:
+  - a: owl:Class
+  - rdfs:label:
+    - label: "acute bronchiolitis"
+  - obo:IAO_0000115:
+    - definition: "Acute inflammation of the bronchioles usually caused by the respiratory syncytial virus."
+  - oboinowl:id:
+    - id: "MONDO:0020680"

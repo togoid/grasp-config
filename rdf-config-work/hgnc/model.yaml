@@ -1,0 +1,14 @@
+- HGNC hgnc:11998:
+  - a:
+    - obo:SO_0000704
+    - m2r:Gene
+  - dct:identifier:
+    - id: "11998"
+  - rdfs:label:
+    - label: "TP53"
+  - dct:description:
+    - description: "tumor protein p53"
+  - obo:so_part_of*:
+    - location: "17p13.1"
+  - skos:altLabel*:
+    - alt_label: "p53"

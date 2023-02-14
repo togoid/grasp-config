@@ -1,0 +1,8 @@
+- NCBIGene ncbigene:34:
+  - a: insdc:Gene
+  - dct:identifier:
+    - id: 34
+  - rdfs:label:
+    - label: "ACADM"
+  - dct:description:
+    - description: "acyl-CoA dehydrogenase medium chain"

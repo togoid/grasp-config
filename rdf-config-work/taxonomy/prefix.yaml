@@ -1,0 +1,4 @@
+dct: <http://purl.org/dc/terms/>
+rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+ddbj: <http://ddbj.nig.ac.jp/ontologies/taxonomy/>
+taxonomy: <http://identifiers.org/taxonomy/>

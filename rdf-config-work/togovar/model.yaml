@@ -1,0 +1,8 @@
+- SNV hco:7/GRCh38#127614533-G-A:
+  - a: gvo:SNV
+  - dct:identifier:
+    - id: "tgv30913364"
+  - tgvo:hasConsequence+:
+    - []:
+      - tgvo:hgvsg:
+        - label: "7:g.127614533G>A"
