@@ -1,7 +1,11 @@
 - UniProt up:P06493:
   - a: core:Protein
-  - core:recommendedName?:  # TrEMBL の場合は core:submittedName なので SPARQL クエリに property path で追記 (OPTIONAL ははずす) 
+  - core:recommendedName:
     - []:
       - a: core:Structured_Name
       - core:fullName:
         - label: "Cyclin-dependent kinase 1"
+
+# TODO
+# TrEMBL の場合は core:submittedName なので SPARQL クエリに property path で書き換える
+# ?UniProt (core:recommendedName / core:fullName) | (core:submittedName / core:fullName) ?label
