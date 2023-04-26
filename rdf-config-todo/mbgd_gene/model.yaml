@@ -1,0 +1,6 @@
+- MBGD_Gene mbgd_gene:hsa:HSA_71774083:
+  - a: orth:Gene
+  - rdfs:label:
+    - label: "MYC"
+  - dcterms:identifier:
+    - id: "hsa:HSA_71774083"

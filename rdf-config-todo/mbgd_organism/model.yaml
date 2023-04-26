@@ -1,0 +1,6 @@
+- MBGD_Organism mbgd_organism:ash:
+  - a: orth:Genome
+  - rdfs:label:
+    - label: "Alistipes shahii WAL 8301"
+  - dcterms:identifier:
+    - id: "ash"
