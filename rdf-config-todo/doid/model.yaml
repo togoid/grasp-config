@@ -1,0 +1,6 @@
+- DOID obo:DOID_8469:
+  - a: owl:Class
+  - rdfs:label:
+    - label: "influenza"
+  - oboinowl:id:
+    - id: "DOID:8469"
