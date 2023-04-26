@@ -1,0 +1,6 @@
+- Orphanet orphanet:Orphanet_3386:
+  - a: owl:Class
+  - rdfs:label:
+    - label: "American trypanosomiasis"
+  - skos:notation:
+    - id: "ORPHA:3386" #これしかない
