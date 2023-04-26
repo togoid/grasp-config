@@ -1,0 +1,6 @@
+- EC enzyme:2.4.1.68:
+  - a: core:Enzyme
+  - skos:prefLabel:
+    - label: "glycoprotein 6-alpha-L-fucosyltransferase"
+
+# TODO: id がない
