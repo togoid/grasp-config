@@ -1,0 +1,6 @@
+- WikiPathways idorgwp:WP4424_r116409:
+  - a: wp:Pathway
+  - dc:title:
+    - label: "G alpha (q) signaling events"
+  - dct:identifier:
+    - id: "WP4424"
