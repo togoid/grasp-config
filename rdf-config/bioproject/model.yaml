@@ -1,5 +1,0 @@
-- BioProject idorg_bioproject:PRJDB9772:
-  - a: bioproject_ont:BioProjectRecord
-# TODO:
-# * define id, label
-# * fix ddbj ftp
