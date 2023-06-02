@@ -1,4 +1,4 @@
 dcterms: <http://purl.org/dc/terms/>
 rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-orth: <http://purl.org/net/orth#>
+mbgd: <http://purl.jp/bio/11/mbgd#>
 mbgd_organism: <http://mbgd.genome.ad.jp/rdf/resource/organism/>
