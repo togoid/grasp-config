@@ -1,0 +1,6 @@
+- EnsemblGene ensg:ENSG00000000003:
+  - a: terms:EnsemblGene
+  - dcterms:identifier:
+    - id: "ENSG00000000003"
+  - rdfs:label:
+    - label: "TSPAN6"

@@ -1,0 +1,5 @@
+- EnsemblProtein ensp:ENSP00000473889:
+  - a: terms:EnsemblProtein
+  - dcterms:identifier:
+    - id: "ENSP00000473889"
+# label ない

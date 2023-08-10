@@ -1,0 +1,4 @@
+rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+dcterms: <http://purl.org/dc/terms/>
+enst: <http://rdf.ebi.ac.uk/resource/ensembl.transcript/>
+terms: <http://rdf.ebi.ac.uk/terms/ensembl/>
