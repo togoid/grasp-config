@@ -1,0 +1,6 @@
+- SRAExperiment idorg_sra:ERX556144:
+  - a: dra_ont:Experiment
+  - rdfs:label:
+    - label: "ERX556144: PacBio RS sequencing"
+  - dct:identifier:
+    - id: "ERX556144"
