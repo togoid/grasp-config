@@ -1,0 +1,5 @@
+- Ec ec:1.1.1.1:
+  - dcterms:identifier:
+    - id: "1.1.1.1"
+  - rdfs:label:
+    - label: "alcohol dehydrogenase"

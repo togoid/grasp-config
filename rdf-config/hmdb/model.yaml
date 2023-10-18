@@ -1,0 +1,5 @@
+- Hmdb hmdb:HMDB0000001:
+  - dcterms:identifier:
+    - id: "HMDB0000001"
+  - rdfs:label:
+    - label: "1-Methylhistidine"

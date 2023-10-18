@@ -1,0 +1,5 @@
+- Swisslipids swisslipids:000000002:
+  - dcterms:identifier:
+    - id: "SLM:000000002"
+  - rdfs:label:
+    - label: "Ceramide (iso-d17:1(4E))"

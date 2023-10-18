@@ -1,0 +1,5 @@
+- Interpro interpro:IPR000001:
+  - dcterms:identifier:
+    - id: "IPR000001"
+  - rdfs:label:
+    - label: "Kringle"

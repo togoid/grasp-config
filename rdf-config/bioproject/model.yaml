@@ -1,0 +1,5 @@
+- Bioproject bioproject:PRJNA3:
+  - dcterms:identifier:
+    - id: "PRJNA3"
+  - rdfs:label:
+    - label: "Causes Lyme disease"

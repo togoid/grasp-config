@@ -1,0 +1,5 @@
+- RefseqRna refseq_rna:NM_001304778:
+  - dcterms:identifier:
+    - id: "NM_001304778"
+  - rdfs:label:
+    - label: "Brachypodium distachyon alpha-gliadin (GLI-2), mRNA."

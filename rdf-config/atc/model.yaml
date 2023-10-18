@@ -1,0 +1,5 @@
+- Atc atc:A:
+  - dcterms:identifier:
+    - id: "A"
+  - rdfs:label:
+    - label: "alimentary tract and metabolism"
