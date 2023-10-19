@@ -1,0 +1,6 @@
+- Uberon uberon:0002048:
+  - a: owl:Class
+  - rdfs:label:
+    - label: "lung"
+  - oboInOwl:id:
+      - id: "UBERON:0002048"
