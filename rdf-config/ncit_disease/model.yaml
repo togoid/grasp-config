@@ -1,0 +1,6 @@
+- NcitDisease ncit:C48829:
+  - a: owl:Class
+  - ncit:NHC0:
+    - id: "C48829"
+  - rdfs:label:
+    - label: "Primary Lymphedema"

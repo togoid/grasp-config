@@ -1,0 +1,6 @@
+- NcitTissue ncit:C12279:
+  - a: owl:Class
+  - ncit:NHC0:
+    - id: "C12279"
+  - rdfs:label:
+    - label: "Supraglottis"
