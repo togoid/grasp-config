@@ -1,0 +1,5 @@
+- FlybaseGene flybase_gene:FBgn0040373:
+  - dcterms:identifier:
+    - id: "FBgn0040373"
+  - rdfs:label:
+    - label: "CG3038"

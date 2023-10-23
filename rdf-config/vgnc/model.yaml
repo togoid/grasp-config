@@ -1,0 +1,5 @@
+- Vgnc vgnc:81830:
+  - dcterms:identifier:
+    - id: "81830"
+  - rdfs:label:
+    - label: "CYP26C1"

@@ -1,0 +1,5 @@
+- MgiAllele mgi_allele:5603349:
+  - dcterms:identifier:
+    - id: "MGI:5603349"
+  - rdfs:label:
+    - label: "0610010K14Rik<tm1.1(KOMP)Vlcg>"

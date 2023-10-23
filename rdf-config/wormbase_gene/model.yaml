@@ -1,0 +1,5 @@
+- WormbaseGene wormbase_gene:WBGene00022277:
+  - dcterms:identifier:
+    - id: "WBGene00022277"
+  - rdfs:label:
+    - label: "homt-1"

@@ -1,0 +1,5 @@
+- MgiGene mgi_gene:1341858:
+  - dcterms:identifier:
+    - id: "MGI:1341858"
+  - rdfs:label:
+    - label: "03B03F"

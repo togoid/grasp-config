@@ -1,0 +1,5 @@
+- XenbaseGene xenbase_gene:XB-GENE-1010722:
+  - dcterms:identifier:
+    - id: "XB-GENE-1010722"
+  - rdfs:label:
+    - label: "slc5a11.L"
