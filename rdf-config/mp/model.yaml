@@ -1,0 +1,6 @@
+- Mp obo:MP_0000026:
+  - a: owl:Class
+  - oboinowl:id:
+    - id: "MP:0000026"
+  - rdfs:label:
+    - label: "abnormal inner ear morphology"
