@@ -1,4 +1,4 @@
 endpoint:
-  - https://integbio.jp/togosite/sparql
+  - https://rdfportal.org/bioportal/sparql
   - graph:
-    - http://rdf.integbio.jp/dataset/togosite/nando
+    - http://rdf.integbio.jp/dataset/bioportal/nando
