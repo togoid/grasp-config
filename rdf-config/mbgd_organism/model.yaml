@@ -1,4 +1,4 @@
-- MBGDOrganism mbgd_organism:ash:
+- MbgdOrganism mbgd_organism:ash:
   - a: mbgd:Genome
   - rdfs:label:
     - label: "Alistipes shahii WAL 8301"

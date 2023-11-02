@@ -1,4 +1,4 @@
-- ChEBI obo:CHEBI_17232:
+- Chebi obo:CHEBI_17232:
   - a: owl:Class
   - oboinowl:id:
     - id: "CHEBI:17232"

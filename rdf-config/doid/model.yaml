@@ -1,4 +1,4 @@
-- DOID obo:DOID_8469:
+- Doid obo:DOID_8469:
   - a: owl:Class
   - rdfs:label:
     - label: "influenza"

@@ -1,4 +1,4 @@
-- UniProtMnemonic:
+- UniprotMnemonic:
   - a: core:Protein
   - core:recommendedName?:  # TrEMBL の場合は core:submittedName なので SPARQL クエリに property path で追記 (OPTIONAL ははずす) 
     - []:
