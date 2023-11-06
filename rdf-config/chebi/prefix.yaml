@@ -6,3 +6,4 @@ obochebi: <http://purl.obolibrary.org/obo/chebi/>
 obochebi_sha: <http://purl.obolibrary.org/obo/chebi#>
 obochebi_dot: <http://purl.obolibrary.org/obo/chebi.>
 owl: <http://www.w3.org/2002/07/owl#>
+xsd: <http://www.w3.org/2001/XMLSchema#>
