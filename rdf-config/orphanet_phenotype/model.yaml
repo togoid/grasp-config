@@ -1,4 +1,4 @@
-- Orphanet orphanet:Orphanet_3386:
+- OrphanetPhenotype orphanet:Orphanet_3386:
   - a: owl:Class
   - rdfs:label:
     - label: "American trypanosomiasis"
