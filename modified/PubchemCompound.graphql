@@ -1,0 +1,38 @@
+"""
+--- endpoint ---
+https://rdfportal.org/pubchem/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX sio: <http://semanticscience.org/resource/>
+
+CONSTRUCT {
+  ?PubchemCompound :iri ?PubchemCompound .
+  ?PubchemCompound :id ?id .
+  ?PubchemCompound :label ?label .
+}
+WHERE {
+  ?PubchemCompound sio:SIO_000008 [
+      a sio:CHEMINF_000140 ;
+      sio:SIO_000300 ?id ;
+    ] ;
+    sio:SIO_000008 [
+      a sio:CHEMINF_000382 ;
+      sio:SIO_000300 ?label ;
+    ] .
+
+  {{#if iri}}VALUES ?PubchemCompound { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if id}}
+    VALUES ?id {
+      {{#each id as |_id|}}
+        "{{_id}}"@en
+      {{/each}}
+    }
+  {{/if}}
+}
+"""
+type PubchemCompound {
+  iri: String!
+  id: [String!]
+  label: [String!]
+}

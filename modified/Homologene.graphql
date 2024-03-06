@@ -1,0 +1,35 @@
+"""
+--- endpoint ---
+https://rdfportal.org/primary/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX orth: <http://purl.org/net/orth#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+CONSTRUCT {
+  ?Homologene :iri ?Homologene .
+  ?Homologene :id ?id .
+  ?Homologene :label ?label .
+}
+WHERE {
+  ?Homologene a orth:OrthologsCluster ;
+    dct:identifier ?id ;
+    rdfs:label ?label .
+
+  {{#if iri}}VALUES ?Homologene { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if id}}
+    VALUES ?id {
+      {{#each id as |_id|}}
+        {{_id}}
+      {{/each}}
+    }
+  {{/if}}
+}
+"""
+type Homologene {
+  iri: String!
+  id: Int!
+  label: String!
+}

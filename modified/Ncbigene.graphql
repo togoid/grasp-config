@@ -1,0 +1,29 @@
+"""
+--- endpoint ---
+https://spang.dbcls.jp/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX insdc: <http://ddbj.nig.ac.jp/ontologies/nucleotide/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+CONSTRUCT {
+  ?Ncbigene :iri ?Ncbigene .
+  ?Ncbigene :id ?id .
+  ?Ncbigene :label ?label .
+}
+WHERE {
+  ?Ncbigene a insdc:Gene ;
+    dct:identifier ?id ;
+    rdfs:label ?label .
+
+  {{#if iri}}VALUES ?Ncbigene { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if id}}VALUES ?id { {{join " " id}} }{{/if}}
+}
+"""
+type Ncbigene {
+  iri: String!
+  id: Int!
+  label: String!
+}

@@ -1,0 +1,35 @@
+"""
+--- endpoint ---
+https://rdfportal.org/primary/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX ddbj: <http://ddbj.nig.ac.jp/ontologies/taxonomy/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+CONSTRUCT {
+  ?Taxonomy :iri ?Taxonomy .
+  ?Taxonomy :id ?id .
+  ?Taxonomy :label ?label .
+}
+WHERE {
+  ?Taxonomy a ddbj:Taxon ;
+    dct:identifier ?id ;
+    rdfs:label ?label .
+
+  {{#if iri}}VALUES ?Taxonomy { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if id}}
+    VALUES ?id {
+      {{#each id as |_id|}}
+        {{_id}}
+      {{/each}}
+    }
+  {{/if}}
+}
+"""
+type Taxonomy {
+  iri: String!
+  id: Int!
+  label: String!
+}
