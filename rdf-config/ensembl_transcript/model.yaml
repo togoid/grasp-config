@@ -1,5 +1,5 @@
-- EnsemblTranscript enst:ENST00000207457:
-  - a: terms:EnsemblTranscript
+- ensembl_transcript enst:ENST00000207457:
+  - a: terms:ensembl_transcript
   - dcterms:identifier:
     - id: "ENST00000207457"
   - rdfs:label:

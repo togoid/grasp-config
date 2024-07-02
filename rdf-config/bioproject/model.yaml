@@ -1,4 +1,4 @@
-- Bioproject bioproject:PRJNA3:
+- bioproject bioproject:PRJNA3:
   - dcterms:identifier:
     - id: "PRJNA3"
   - rdfs:label:

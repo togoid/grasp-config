@@ -1,4 +1,4 @@
-- NcitDisease ncit:C48829:
+- ncit_disease ncit:C48829:
   - a: owl:Class
   - ncit:NHC0:
     - id: "C48829"

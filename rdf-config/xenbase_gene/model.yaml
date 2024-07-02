@@ -1,4 +1,4 @@
-- XenbaseGene xenbase_gene:XB-GENE-1010722:
+- xenbase_gene xenbase_gene:XB-GENE-1010722:
   - dcterms:identifier:
     - id: "XB-GENE-1010722"
   - rdfs:label:

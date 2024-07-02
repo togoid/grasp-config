@@ -1,4 +1,4 @@
-- ChemblCompound chembl:CHEMBL667:
+- chembl_compound chembl:CHEMBL667:
   - a: cco:SmallMolecule   #chembl_molecule:CHEMBL10010
   - a: cco:ProteinMolecule   #chembl_molecule:CHEMBL103817
   - a: cco:UnknownSubstance

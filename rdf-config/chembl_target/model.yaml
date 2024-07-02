@@ -1,4 +1,4 @@
-- ChemblTarget target:CHEMBL1907594:
+- chembl_target target:CHEMBL1907594:
   - a:
     - cco:ProteinComplex
     - cco:SingleProtein

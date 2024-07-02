@@ -1,4 +1,4 @@
-- HpPhenotype obo:HP_0001903:
+- hp_phenotype obo:HP_0001903:
   - a: owl:Class
   - oboinowl:id:
     - id: "HP:0001903"

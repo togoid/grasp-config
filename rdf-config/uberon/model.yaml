@@ -1,4 +1,4 @@
-- Uberon uberon:0002048:
+- uberon uberon:0002048:
   - a: owl:Class
   - rdfs:label:
     - label: "lung"

@@ -1,4 +1,4 @@
-- MbgdGene mbgd_gene:hsa:HSA_71774083:
+- mbgd_gene mbgd_gene:hsa:HSA_71774083:
   - a: orth:Gene
   - rdfs:label:
     - label: "MYC"

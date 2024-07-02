@@ -1,4 +1,4 @@
-- Ec ec:1.1.1.1:
+- ec ec:1.1.1.1:
   - dcterms:identifier:
     - id: "1.1.1.1"
   - rdfs:label:

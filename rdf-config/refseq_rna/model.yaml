@@ -1,4 +1,4 @@
-- RefseqRna refseq_rna:NM_001304778:
+- refseq_rna refseq_rna:NM_001304778:
   - dcterms:identifier:
     - id: "NM_001304778"
   - rdfs:label:
