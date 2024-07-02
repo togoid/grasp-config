@@ -8,20 +8,20 @@ PREFIX cvo: <http://purl.jp/bio/10/clinvar/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 CONSTRUCT {
-  ?Clinvar :iri ?Clinvar .
-  ?Clinvar :id ?id .
-  ?Clinvar :label ?label .
+  ?clinvar :iri ?clinvar .
+  ?clinvar :id ?id .
+  ?clinvar :label ?label .
 }
 WHERE {
-  ?Clinvar a cvo:VariationArchiveType ;
+  ?clinvar a cvo:VariationArchiveType ;
     cvo:variation_id ?id ;
     rdfs:label ?label .
 
-  {{#if iri}}VALUES ?Clinvar { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if iri}}VALUES ?clinvar { {{join " " (as-iriref iri)}} }{{/if}}
   {{#if id}}VALUES ?id { {{join " " id}} }{{/if}}
 }
 """
-type Clinvar {
+type clinvar {
   iri: String!
   id: Int!
   label: String!

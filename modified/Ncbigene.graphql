@@ -9,20 +9,20 @@ PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 CONSTRUCT {
-  ?Ncbigene :iri ?Ncbigene .
-  ?Ncbigene :id ?id .
-  ?Ncbigene :label ?label .
+  ?ncbigene :iri ?ncbigene .
+  ?ncbigene :id ?id .
+  ?ncbigene :label ?label .
 }
 WHERE {
-  ?Ncbigene a insdc:Gene ;
+  ?ncbigene a insdc:Gene ;
     dct:identifier ?id ;
     rdfs:label ?label .
 
-  {{#if iri}}VALUES ?Ncbigene { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if iri}}VALUES ?ncbigene { {{join " " (as-iriref iri)}} }{{/if}}
   {{#if id}}VALUES ?id { {{join " " id}} }{{/if}}
 }
 """
-type Ncbigene {
+type ncbigene {
   iri: String!
   id: Int!
   label: String!

@@ -8,15 +8,15 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 CONSTRUCT {
-  ?MgiAllele :iri ?MgiAllele .
-  ?MgiAllele :id ?id .
-  ?MgiAllele :label ?label .
+  ?mgi_allele :iri ?mgi_allele .
+  ?mgi_allele :id ?id .
+  ?mgi_allele :label ?label .
 }
 WHERE {
-  ?MgiAllele dcterms:identifier ?mgiid ;
+  ?mgi_allele dcterms:identifier ?mgiid ;
     rdfs:label ?label .
 
-  {{#if iri}}VALUES ?MgiAllele { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if iri}}VALUES ?mgi_allele { {{join " " (as-iriref iri)}} }{{/if}}
   {{#if id}}
     VALUES ?mgiid {
       {{#each id as |_id|}}
@@ -27,7 +27,7 @@ WHERE {
   BIND (strafter(?mgiid, "MGI:") AS ?id)
 }
 """
-type MgiAllele {
+type mgi_allele {
   iri: String!
   id: String!
   label: String!

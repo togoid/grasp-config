@@ -8,19 +8,19 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 CONSTRUCT {
-  ?Hmdb :iri ?Hmdb .
-  ?Hmdb :id ?id .
-  ?Hmdb :label ?label .
+  ?hmdb :iri ?hmdb .
+  ?hmdb :id ?id .
+  ?hmdb :label ?label .
 }
 WHERE {
-  ?Hmdb dcterms:identifier ?id ;
+  ?hmdb dcterms:identifier ?id ;
     rdfs:label ?label .
 
-  {{#if iri}}VALUES ?Hmdb { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if iri}}VALUES ?hmdb { {{join " " (as-iriref iri)}} }{{/if}}
   {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
 }
 """
-type Hmdb {
+type hmdb {
   iri: String!
   id: String!
   label: String!

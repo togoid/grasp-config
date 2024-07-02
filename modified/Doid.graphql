@@ -10,16 +10,16 @@ PREFIX oboinowl: <http://www.geneontology.org/formats/oboInOwl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 CONSTRUCT {
-  ?Doid :iri ?Doid .
-  ?Doid :label ?label .
-  ?Doid :id ?id .
+  ?doid :iri ?doid .
+  ?doid :label ?label .
+  ?doid :id ?id .
 }
 WHERE {
-  ?Doid a owl:Class ;
+  ?doid a owl:Class ;
     rdfs:label ?label ;
     oboinowl:id ?doidid .
 
-  {{#if iri}}VALUES ?Doid { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if iri}}VALUES ?doid { {{join " " (as-iriref iri)}} }{{/if}}
   {{#if id}}
     VALUES ?doidid {
       {{#each id as |_id|}}
@@ -31,7 +31,7 @@ WHERE {
 
 }
 """
-type Doid {
+type doid {
   iri: String!
   label: String!
   id: String!

@@ -8,15 +8,15 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 CONSTRUCT {
-  ?Swisslipids :iri ?Swisslipids .
-  ?Swisslipids :id ?id .
-  ?Swisslipids :label ?label .
+  ?swisslipids :iri ?swisslipids .
+  ?swisslipids :id ?id .
+  ?swisslipids :label ?label .
 }
 WHERE {
-  ?Swisslipids dcterms:identifier ?slid ;
+  ?swisslipids dcterms:identifier ?slid ;
     rdfs:label ?label .
 
-  {{#if iri}}VALUES ?Swisslipids { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if iri}}VALUES ?swisslipids { {{join " " (as-iriref iri)}} }{{/if}}
   {{#if id}}
     VALUES ?slid {
       {{#each id as |_id|}}
@@ -27,7 +27,7 @@ WHERE {
   BIND (strafter(?slid, "SLM:") AS ?id)
 }
 """
-type Swisslipids {
+type swisslipids {
   iri: String!
   id: String!
   label: String!

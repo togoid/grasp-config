@@ -10,16 +10,16 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 CONSTRUCT {
-  ?Chebi :iri ?Chebi .
-  ?Chebi :id ?id .
-  ?Chebi :label ?label .
+  ?chebi :iri ?chebi .
+  ?chebi :id ?id .
+  ?chebi :label ?label .
 }
 WHERE {
-  ?Chebi a owl:Class ;
+  ?chebi a owl:Class ;
     oboinowl:id ?chebiid ;
     rdfs:label ?label .
 
-  {{#if iri}}VALUES ?Chebi { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if iri}}VALUES ?chebi { {{join " " (as-iriref iri)}} }{{/if}}
   {{#if id}}
     VALUES ?chebiid {
       {{#each id as |_id|}}
@@ -30,7 +30,7 @@ WHERE {
   BIND (strafter(?chebiid, "CHEBI:") AS ?id)
 }
 """
-type Chebi {
+type chebi {
   iri: String!
   id: String!
   label: String!

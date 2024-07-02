@@ -10,16 +10,16 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 CONSTRUCT {
-  ?HpInheritance :iri ?HpInheritance .
-  ?HpInheritance :id ?id .
-  ?HpInheritance :label ?label .
+  ?hp_inheritance :iri ?hp_inheritance .
+  ?hp_inheritance :id ?id .
+  ?hp_inheritance :label ?label .
 }
 WHERE {
-  ?HpInheritance a owl:Class ;
+  ?hp_inheritance a owl:Class ;
     oboinowl:id ?hpid ;
     rdfs:label ?label .
 
-  {{#if iri}}VALUES ?HpInheritance { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if iri}}VALUES ?hp_inheritance { {{join " " (as-iriref iri)}} }{{/if}}
   {{#if id}}
     VALUES ?hpid {
       {{#each id as |_id|}}
@@ -31,7 +31,7 @@ WHERE {
   FILTER (lang(?label) = "en")
 }
 """
-type HpInheritance {
+type hp_inheritance {
   iri: String!
   id: String!
   label: [String!]

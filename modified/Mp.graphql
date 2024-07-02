@@ -10,16 +10,16 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 CONSTRUCT {
-  ?Mp :iri ?Mp .
-  ?Mp :id ?id .
-  ?Mp :label ?label .
+  ?mp :iri ?mp .
+  ?mp :id ?id .
+  ?mp :label ?label .
 }
 WHERE {
-  ?Mp a owl:Class ;
+  ?mp a owl:Class ;
     oboinowl:id ?mpid ;
     rdfs:label ?label .
 
-  {{#if iri}}VALUES ?Mp { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if iri}}VALUES ?mp { {{join " " (as-iriref iri)}} }{{/if}}
   {{#if id}}
     VALUES ?mpid {
       {{#each id as |_id|}}
@@ -30,7 +30,7 @@ WHERE {
   BIND (strafter(?mpid, "MP:") AS ?id)
 }
 """
-type Mp {
+type mp {
   iri: String!
   id: String!
   label: String!

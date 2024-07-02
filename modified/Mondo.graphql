@@ -10,16 +10,16 @@ PREFIX oboinowl: <http://www.geneontology.org/formats/oboInOwl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 CONSTRUCT {
-  ?Mondo :iri ?Mondo .
-  ?Mondo :label ?label .
-  ?Mondo :id ?id .
+  ?mondo :iri ?mondo .
+  ?mondo :label ?label .
+  ?mondo :id ?id .
 }
 WHERE {
-  ?Mondo a owl:Class ;
+  ?mondo a owl:Class ;
     rdfs:label ?label ;
     oboinowl:id ?mondoid .
 
-  {{#if iri}}VALUES ?Mondo { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if iri}}VALUES ?mondo { {{join " " (as-iriref iri)}} }{{/if}}
   {{#if id}}
     VALUES ?mondoid {
       {{#each id as |_id|}}
@@ -30,7 +30,7 @@ WHERE {
   BIND (strafter(?mondoid, "MONDO:") AS ?id)
 }
 """
-type Mondo {
+type mondo {
   iri: String!
   label: String!
   id: String!

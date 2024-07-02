@@ -7,31 +7,31 @@ PREFIX : <https://github.com/dbcls/grasp/ns/>
 PREFIX core: <http://purl.uniprot.org/core/>
 
 CONSTRUCT {
-  ?Uniprot :iri ?Uniprot .
-  ?Uniprot :id ?id .
-  ?Uniprot :label ?label .
+  ?uniprot :iri ?uniprot .
+  ?uniprot :id ?id .
+  ?uniprot :label ?label .
 }
 WHERE {
   {{#if iri}}
-    VALUES ?Uniprot { {{join " " (as-iriref iri)}} }
-    BIND (strafter(str(?Uniprot), "http://purl.uniprot.org/uniprot/") AS ?id)
+    VALUES ?uniprot { {{join " " (as-iriref iri)}} }
+    BIND (strafter(str(?uniprot), "http://purl.uniprot.org/uniprot/") AS ?id)
   {{/if}}
   {{#if id}}
     VALUES ?id { {{join " " (as-string id)}} }
-    BIND (iri(concat("http://purl.uniprot.org/uniprot/", ?id)) AS ?Uniprot)
+    BIND (iri(concat("http://purl.uniprot.org/uniprot/", ?id)) AS ?uniprot)
   {{/if}}
-  ?Uniprot a core:Protein .
+  ?uniprot a core:Protein .
 #   core:recommendedName / core:fullName ?label .
   {
-    ?Uniprot core:recommendedName / core:fullName ?label .
+    ?uniprot core:recommendedName / core:fullName ?label .
   }
   UNION
   {
-    ?Uniprot core:submittedName / core:fullName ?label .
+    ?uniprot core:submittedName / core:fullName ?label .
   }
 }
 """
-type Uniprot {
+type uniprot {
   iri: String!
   id: String!
   label: String!

@@ -9,16 +9,16 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 CONSTRUCT {
-  ?OrphanetPhenotype :iri ?OrphanetPhenotype .
-  ?OrphanetPhenotype :label ?label .
-  ?OrphanetPhenotype :id ?id .
+  ?orphanet_phenotype :iri ?orphanet_phenotype .
+  ?orphanet_phenotype :label ?label .
+  ?orphanet_phenotype :id ?id .
 }
 WHERE {
-  ?OrphanetPhenotype a owl:Class ;
+  ?orphanet_phenotype a owl:Class ;
     rdfs:label ?label ;
     skos:notation ?ordoid .
 
-  {{#if iri}}VALUES ?OrphanetPhenotype { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if iri}}VALUES ?orphanet_phenotype { {{join " " (as-iriref iri)}} }{{/if}}
   {{#if id}}
     VALUES ?ordoid {
       {{#each id as |_id|}}
@@ -29,7 +29,7 @@ WHERE {
   BIND (strafter(?ordoid, "ORPHA:") AS ?id)
 }
 """
-type OrphanetPhenotype {
+type orphanet_phenotype {
   iri: String!
   label: String!
   id: String!

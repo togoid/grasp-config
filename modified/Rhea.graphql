@@ -7,15 +7,15 @@ PREFIX : <https://github.com/dbcls/grasp/ns/>
 PREFIX rhea: <http://rdf.rhea-db.org/>
 
 CONSTRUCT {
-  ?Rhea :iri ?Rhea .
-  ?Rhea :id ?id .
-  ?Rhea :label ?label .
+  ?rhea :iri ?rhea .
+  ?rhea :id ?id .
+  ?rhea :label ?label .
 }
 WHERE {
-  ?Rhea rhea:id ?id ;
+  ?rhea rhea:id ?id ;
     rhea:equation ?label .
 
-  {{#if iri}}VALUES ?Rhea { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if iri}}VALUES ?rhea { {{join " " (as-iriref iri)}} }{{/if}}
   {{#if id}}
     VALUES ?id {
       {{#each id as |_id|}}
@@ -25,7 +25,7 @@ WHERE {
   {{/if}}
 }
 """
-type Rhea {
+type rhea {
   iri: String!
   id: Int!
   label: String!

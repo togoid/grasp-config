@@ -10,16 +10,16 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 CONSTRUCT {
-  ?Go :iri ?Go .
-  ?Go :id ?id .
-  ?Go :label ?label .
+  ?go :iri ?go .
+  ?go :id ?id .
+  ?go :label ?label .
 }
 WHERE {
-  ?Go a owl:Class ;
+  ?go a owl:Class ;
     oboinowl:id ?goid ;
     rdfs:label ?label .
 
-  {{#if iri}}VALUES ?Go { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if iri}}VALUES ?go { {{join " " (as-iriref iri)}} }{{/if}}
 #  {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
   {{#if id}}
     VALUES ?goid {
@@ -31,7 +31,7 @@ WHERE {
   BIND (strafter(?goid, "GO:") AS ?id)
 }
 """
-type Go {
+type go {
   iri: String!
   id: String!
   label: String!

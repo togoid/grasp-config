@@ -10,17 +10,17 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 CONSTRUCT {
-  ?HpPhenotype :iri ?HpPhenotype .
-  ?HpPhenotype :id ?id .
-  ?HpPhenotype :label ?label .
+  ?hp_phenotype :iri ?hp_phenotype .
+  ?hp_phenotype :id ?id .
+  ?hp_phenotype :label ?label .
 }
 FROM <http://rdfportal.org/ontology/hp>
 WHERE {
-  ?HpPhenotype a owl:Class ;
+  ?hp_phenotype a owl:Class ;
     oboinowl:id ?hpid ;
     rdfs:label ?label .
 
-  {{#if iri}}VALUES ?HpPhenotype { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if iri}}VALUES ?hp_phenotype { {{join " " (as-iriref iri)}} }{{/if}}
   {{#if id}}
     VALUES ?hpid {
       {{#each id as |_id|}}
@@ -31,7 +31,7 @@ WHERE {
   BIND (strafter(?hpid, "HP:") AS ?id)
 }
 """
-type HpPhenotype {
+type hp_phenotype {
   iri: String!
   id: String!
   label: [String!]

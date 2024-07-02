@@ -9,16 +9,16 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX dct: <http://purl.org/dc/terms/>
 
 CONSTRUCT {
-  ?Nando :iri ?Nando .
-  ?Nando :label ?label .
-  ?Nando :id ?id .
+  ?nando :iri ?nando .
+  ?nando :label ?label .
+  ?nando :id ?id .
 }
 WHERE {
-  ?Nando a owl:Class ;
+  ?nando a owl:Class ;
     rdfs:label ?label ;
     dct:identifier ?nandoid .
 
-  {{#if iri}}VALUES ?Nando { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if iri}}VALUES ?nando { {{join " " (as-iriref iri)}} }{{/if}}
   {{#if id}}
     VALUES ?nandoid {
       {{#each id as |_id|}}
@@ -30,7 +30,7 @@ WHERE {
   FILTER (lang(?label) = "en")
 }
 """
-type Nando {
+type nando {
   iri: String!
   label: String!
   id: String!

@@ -9,16 +9,16 @@ PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 CONSTRUCT {
-  ?Homologene :iri ?Homologene .
-  ?Homologene :id ?id .
-  ?Homologene :label ?label .
+  ?homologene :iri ?homologene .
+  ?homologene :id ?id .
+  ?homologene :label ?label .
 }
 WHERE {
-  ?Homologene a orth:OrthologsCluster ;
+  ?homologene a orth:OrthologsCluster ;
     dct:identifier ?id ;
     rdfs:label ?label .
 
-  {{#if iri}}VALUES ?Homologene { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if iri}}VALUES ?homologene { {{join " " (as-iriref iri)}} }{{/if}}
   {{#if id}}
     VALUES ?id {
       {{#each id as |_id|}}
@@ -28,7 +28,7 @@ WHERE {
   {{/if}}
 }
 """
-type Homologene {
+type homologene {
   iri: String!
   id: Int!
   label: String!
