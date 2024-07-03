@@ -1,4 +1,4 @@
-- pubchem_compound compound:CID3835861:
+- PubchemCompound compound:CID3835861:
   - sio:SIO_000008+:      # has attribute
     - []:
       - a: sio:CHEMINF_000140  # PubChem compound identifier (CID)

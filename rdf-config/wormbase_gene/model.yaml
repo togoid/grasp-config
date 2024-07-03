@@ -1,4 +1,4 @@
-- wormbase_gene wormbase_gene:WBGene00022277:
+- WormbaseGene wormbase_gene:WBGene00022277:
   - dcterms:identifier:
     - id: "WBGene00022277"
   - rdfs:label:

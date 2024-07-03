@@ -1,5 +1,5 @@
-- ensembl_gene ensg:ENSG00000000003:
-  - a: terms:ensembl_gene
+- EnsemblGene ensg:ENSG00000000003:
+  - a: terms:EnsemblGene
   - dcterms:identifier:
     - id: "ENSG00000000003"
   - rdfs:label:

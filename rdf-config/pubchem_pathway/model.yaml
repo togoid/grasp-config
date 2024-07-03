@@ -1,4 +1,4 @@
-- pubchem_pathway pubchem_pathway:1:
+- PubchemPathway pubchem_pathway:1:
   - dcterms:identifier:
     - id: "PWID1"
   - rdfs:label:

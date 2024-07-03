@@ -1,4 +1,4 @@
-- pfam pfam:PF00051:
+- Pfam pfam:PF00051:
   - dcterms:identifier:
     - id: "PF00051"
   - rdfs:label:

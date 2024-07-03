@@ -1,4 +1,4 @@
-- mondo obo:MONDO_0020680:
+- Mondo obo:MONDO_0020680:
   - a: owl:Class
   - rdfs:label:
     - label: "acute bronchiolitis"

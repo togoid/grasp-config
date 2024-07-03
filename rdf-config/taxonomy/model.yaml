@@ -1,4 +1,4 @@
-- taxonomy taxonomy:9606:
+- Taxonomy taxonomy:9606:
   - a: ddbj:Taxon
   - dct:identifier:
     - id: 9606

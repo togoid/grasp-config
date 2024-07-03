@@ -1,4 +1,4 @@
-- mp obo:MP_0000026:
+- Mp obo:MP_0000026:
   - a: owl:Class
   - oboinowl:id:
     - id: "MP:0000026"

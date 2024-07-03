@@ -1,4 +1,4 @@
-- hmdb hmdb:HMDB0000001:
+- Hmdb hmdb:HMDB0000001:
   - dcterms:identifier:
     - id: "HMDB0000001"
   - rdfs:label:

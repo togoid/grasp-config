@@ -1,4 +1,4 @@
-- hp_inheritance obo:HP_0032382:
+- HpInheritance obo:HP_0032382:
   - a: owl:Class
   - oboinowl:id:
     - id: "HP:0032382"

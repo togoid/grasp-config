@@ -1,4 +1,4 @@
-- go obo:GO_0044255:
+- Go obo:GO_0044255:
   - a: owl:Class
   - oboinowl:id:
     - id: "GO:0044255"
