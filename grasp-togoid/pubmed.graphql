@@ -1,0 +1,29 @@
+"""
+--- endpoint ---
+https://rdfportal.org/ncbi/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX bibo: <http://purl.org/ontology/bibo/>
+PREFIX dct: <http://purl.org/dc/terms/>
+
+CONSTRUCT {
+  ?pubmed :iri ?pubmed .
+  ?pubmed :id ?id .
+  ?pubmed :label ?label .
+}
+WHERE {
+  GRAPH <http://rdfportal.org/dataset/pubmed> {
+    ?pubmed bibo:pmid ?id ;
+      dct:title ?label .
+  
+    {{#if iri}}VALUES ?pubmed { {{join " " (as-iriref iri)}} }{{/if}}
+    {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
+  }
+}
+"""
+type pubmed {
+  iri: String!
+  id: String!
+  label: String!
+}

@@ -1,0 +1,32 @@
+"""
+--- endpoint ---
+https://rdfportal.org/sib/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX rhea: <http://rdf.rhea-db.org/>
+
+CONSTRUCT {
+  ?rhea :iri ?rhea .
+  ?rhea :id ?id .
+  ?rhea :label ?label .
+}
+WHERE {
+  ?rhea rhea:id ?id ;
+    rhea:equation ?label .
+
+  {{#if iri}}VALUES ?rhea { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if id}}
+    VALUES ?id {
+      {{#each id as |_id|}}
+        {{_id}}
+      {{/each}}
+    }
+  {{/if}}
+}
+"""
+type rhea {
+  iri: String!
+  id: Int!
+  label: String!
+}

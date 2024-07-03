@@ -1,0 +1,37 @@
+"""
+--- endpoint ---
+https://rdfportal.org/ebi/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX oboinowl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+CONSTRUCT {
+  ?chebi :iri ?chebi .
+  ?chebi :id ?id .
+  ?chebi :label ?label .
+}
+WHERE {
+  ?chebi a owl:Class ;
+    oboinowl:id ?chebiid ;
+    rdfs:label ?label .
+
+  {{#if iri}}VALUES ?chebi { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if id}}
+    VALUES ?chebiid {
+      {{#each id as |_id|}}
+        "CHEBI:{{_id}}"^^xsd:string
+      {{/each}}
+    }
+  {{/if}}
+  BIND (strafter(?chebiid, "CHEBI:") AS ?id)
+}
+"""
+type chebi {
+  iri: String!
+  id: String!
+  label: String!
+}

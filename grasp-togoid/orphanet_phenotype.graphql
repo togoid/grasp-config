@@ -1,0 +1,36 @@
+"""
+--- endpoint ---
+https://rdfportal.org/bioportal/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+CONSTRUCT {
+  ?orphanet_phenotype :iri ?orphanet_phenotype .
+  ?orphanet_phenotype :label ?label .
+  ?orphanet_phenotype :id ?id .
+}
+WHERE {
+  ?orphanet_phenotype a owl:Class ;
+    rdfs:label ?label ;
+    skos:notation ?ordoid .
+
+  {{#if iri}}VALUES ?orphanet_phenotype { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if id}}
+    VALUES ?ordoid {
+      {{#each id as |_id|}}
+        "ORPHA:{{_id}}"
+      {{/each}}
+    }
+  {{/if}}
+  BIND (strafter(?ordoid, "ORPHA:") AS ?id)
+}
+"""
+type orphanet_phenotype {
+  iri: String!
+  label: String!
+  id: String!
+}

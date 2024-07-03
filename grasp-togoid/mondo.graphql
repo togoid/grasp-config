@@ -1,0 +1,37 @@
+"""
+--- endpoint ---
+https://rdfportal.org/bioportal/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX oboinowl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+CONSTRUCT {
+  ?mondo :iri ?mondo .
+  ?mondo :label ?label .
+  ?mondo :id ?id .
+}
+WHERE {
+  ?mondo a owl:Class ;
+    rdfs:label ?label ;
+    oboinowl:id ?mondoid .
+
+  {{#if iri}}VALUES ?mondo { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if id}}
+    VALUES ?mondoid {
+      {{#each id as |_id|}}
+        "MONDO:{{_id}}"^^xsd:string
+      {{/each}}
+    }
+  {{/if}}
+  BIND (strafter(?mondoid, "MONDO:") AS ?id)
+}
+"""
+type mondo {
+  iri: String!
+  label: String!
+  id: String!
+}

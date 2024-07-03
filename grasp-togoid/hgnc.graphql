@@ -1,0 +1,33 @@
+"""
+--- endpoint ---
+https://rdfportal.org/primary/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX m2r: <http://med2rdf.org/ontology/med2rdf#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+CONSTRUCT {
+  ?hgnc :iri ?hgnc .
+  ?hgnc :id ?id .
+  ?hgnc :label ?label .
+}
+WHERE {
+  GRAPH <http://rdfportal.org/dataset/hgnc> {
+    VALUES ?hgnc__class { obo:SO_0000704 m2r:Gene }
+    ?hgnc a ?hgnc__class ;
+      dct:identifier ?id ;
+      rdfs:label ?label .
+  
+    {{#if iri}}VALUES ?hgnc { {{join " " (as-iriref iri)}} }{{/if}}
+    {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
+  }
+}
+"""
+type hgnc {
+  iri: String!
+  id: String!
+  label: String!
+}

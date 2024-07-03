@@ -1,0 +1,28 @@
+"""
+--- endpoint ---
+https://rdfportal.org/ncbi/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX cvo: <http://purl.jp/bio/10/clinvar/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+CONSTRUCT {
+  ?clinvar :iri ?clinvar .
+  ?clinvar :id ?id .
+  ?clinvar :label ?label .
+}
+WHERE {
+  ?clinvar a cvo:VariationArchiveType ;
+    cvo:variation_id ?id ;
+    rdfs:label ?label .
+
+  {{#if iri}}VALUES ?clinvar { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if id}}VALUES ?id { {{join " " id}} }{{/if}}
+}
+"""
+type clinvar {
+  iri: String!
+  id: Int!
+  label: String!
+}

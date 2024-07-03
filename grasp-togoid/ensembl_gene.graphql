@@ -1,0 +1,31 @@
+"""
+--- endpoint ---
+https://rdfportal.org/ebi/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX terms: <http://rdf.ebi.ac.uk/terms/ensembl/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+CONSTRUCT {
+  ?ensembl_gene :iri ?ensembl_gene .
+  ?ensembl_gene :id ?id .
+  ?ensembl_gene :label ?label .
+}
+WHERE {
+  GRAPH <http://rdfportal.org/dataset/ensembl> {
+    ?ensembl_gene a terms:ensembl_gene ;
+      dcterms:identifier ?id ;
+      rdfs:label ?label .
+  
+    {{#if iri}}VALUES ?ensembl_gene { {{join " " (as-iriref iri)}} }{{/if}}
+    {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
+  }
+}
+"""
+type ensembl_gene {
+  iri: String!
+  id: String!
+  label: String!
+}

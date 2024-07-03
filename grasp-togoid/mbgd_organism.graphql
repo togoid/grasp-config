@@ -1,0 +1,29 @@
+"""
+--- endpoint ---
+http://sparql.nibb.ac.jp/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX mbgd: <http://purl.jp/bio/11/mbgd#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+CONSTRUCT {
+  ?mbgd_organism :iri ?mbgd_organism .
+  ?mbgd_organism :label ?label .
+  ?mbgd_organism :id ?id .
+}
+WHERE {
+  ?mbgd_organism a mbgd:Genome ;
+    rdfs:label ?label ;
+    dcterms:identifier ?id .
+
+  {{#if iri}}VALUES ?mbgd_organism { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
+}
+"""
+type mbgd_organism {
+  iri: String!
+  label: String!
+  id: String!
+}

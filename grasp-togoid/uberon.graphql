@@ -1,0 +1,36 @@
+"""
+--- endpoint ---
+https://rdfportal.org/bioportal/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+
+CONSTRUCT {
+  ?uberon :iri ?uberon .
+  ?uberon :label ?label .
+  ?uberon :id ?id .
+}
+WHERE {
+  ?uberon a owl:Class ;
+    rdfs:label ?label ;
+    oboInOwl:id ?uberonid .
+
+  {{#if iri}}VALUES ?uberon { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if id}}
+    VALUES ?uberonid {
+      {{#each id as |_id|}}
+        "UBERON:{{_id}}"
+      {{/each}}
+    }
+  {{/if}}
+  BIND (strafter(?uberonid, "UBERON:") AS ?id)
+}
+"""
+type uberon {
+  iri: String!
+  label: String!
+  id: String!
+}

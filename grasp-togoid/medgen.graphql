@@ -1,0 +1,31 @@
+"""
+--- endpoint ---
+https://rdfportal.org/ncbi/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX mo: <http://med2rdf/ontology/medgen#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+CONSTRUCT {
+  ?medgen :iri ?medgen .
+  ?medgen :id ?id .
+  ?medgen :label ?label .
+}
+WHERE {
+  GRAPH <http://rdfportal.org/dataset/medgen> {
+    ?medgen a mo:ConceptID ;
+      dct:identifier ?id ;
+      rdfs:label ?label .
+  
+    {{#if iri}}VALUES ?medgen { {{join " " (as-iriref iri)}} }{{/if}}
+    {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
+  }
+}
+"""
+type medgen {
+  iri: String!
+  id: String!
+  label: String!
+}

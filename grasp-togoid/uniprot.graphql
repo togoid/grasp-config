@@ -1,0 +1,38 @@
+"""
+--- endpoint ---
+https://rdfportal.org/sib/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX core: <http://purl.uniprot.org/core/>
+
+CONSTRUCT {
+  ?uniprot :iri ?uniprot .
+  ?uniprot :id ?id .
+  ?uniprot :label ?label .
+}
+WHERE {
+  {{#if iri}}
+    VALUES ?uniprot { {{join " " (as-iriref iri)}} }
+    BIND (strafter(str(?uniprot), "http://purl.uniprot.org/uniprot/") AS ?id)
+  {{/if}}
+  {{#if id}}
+    VALUES ?id { {{join " " (as-string id)}} }
+    BIND (iri(concat("http://purl.uniprot.org/uniprot/", ?id)) AS ?uniprot)
+  {{/if}}
+  ?uniprot a core:Protein .
+#   core:recommendedName / core:fullName ?label .
+  {
+    ?uniprot core:recommendedName / core:fullName ?label .
+  }
+  UNION
+  {
+    ?uniprot core:submittedName / core:fullName ?label .
+  }
+}
+"""
+type uniprot {
+  iri: String!
+  id: String!
+  label: String!
+}

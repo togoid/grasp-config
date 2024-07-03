@@ -1,0 +1,31 @@
+"""
+--- endpoint ---
+https://rdfportal.org/ebi/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX cco: <http://rdf.ebi.ac.uk/terms/chembl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+CONSTRUCT {
+  ?chembl_compound :iri ?chembl_compound .
+  ?chembl_compound :id ?id .
+  ?chembl_compound :label ?label .
+}
+WHERE {
+  GRAPH <http://rdf.ebi.ac.uk/dataset/chembl> {
+    VALUES ?chembl_compound__class { cco:SmallMolecule cco:ProteinMolecule cco:UnknownSubstance cco:Oligosaccharide cco:UnclassifiedSubstance cco:CellTherapy cco:Enzyme cco:Antibody cco:Oligonucleotide cco:UnclassifiedMolecule }
+    ?chembl_compound a ?chembl_compound__class ;
+      cco:chemblId ?id ;
+      skos:prefLabel ?label .
+  
+    {{#if iri}}VALUES ?chembl_compound { {{join " " (as-iriref iri)}} }{{/if}}
+    {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
+  }
+}
+"""
+type chembl_compound {
+  iri: String!
+  id: String!
+  label: String!
+}

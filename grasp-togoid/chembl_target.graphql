@@ -1,0 +1,31 @@
+"""
+--- endpoint ---
+https://rdfportal.org/ebi/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX cco: <http://rdf.ebi.ac.uk/terms/chembl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+CONSTRUCT {
+  ?chembl_target :iri ?chembl_target .
+  ?chembl_target :id ?id .
+  ?chembl_target :label ?label .
+}
+WHERE {
+  GRAPH <http://rdf.ebi.ac.uk/dataset/chembl> {
+    VALUES ?chembl_target__class { cco:ProteinComplex cco:SingleProtein cco:ProteinComplex cco:ProteinFamily cco:Organism cco:CellLineTarget cco:Tissue cco:NucleicAcid cco:UnclassifiedTarget cco:NonMolecular cco:UnknownTarget cco:ADMET cco:SubCellular cco:ProteinComplexGroup cco:ProteinSelectivityGroup cco:ProteinNucleicAcidComplex cco:ChimericProtein cco:SmallMoleculeTarget cco:ProteinProteinInteraction cco:Macromolecule cco:Phenotype }
+    ?chembl_target a ?chembl_target__class ;
+      cco:chemblId ?id ;
+      rdfs:label ?label .
+  
+    {{#if iri}}VALUES ?chembl_target { {{join " " (as-iriref iri)}} }{{/if}}
+    {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
+  }
+}
+"""
+type chembl_target {
+  iri: String!
+  id: String!
+  label: String!
+}

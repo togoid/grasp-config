@@ -1,0 +1,27 @@
+"""
+--- endpoint ---
+http://ep.dbcls.jp/togoid/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+CONSTRUCT {
+  ?atc :iri ?atc .
+  ?atc :id ?id .
+  ?atc :label ?label .
+}
+WHERE {
+  ?atc dcterms:identifier ?id ;
+    rdfs:label ?label .
+
+  {{#if iri}}VALUES ?atc { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
+}
+"""
+type atc {
+  iri: String!
+  id: String!
+  label: String!
+}

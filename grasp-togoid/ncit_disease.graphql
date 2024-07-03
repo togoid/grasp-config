@@ -1,0 +1,31 @@
+"""
+--- endpoint ---
+https://rdfportal.org/bioportal/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+CONSTRUCT {
+  ?ncit_disease :iri ?ncit_disease .
+  ?ncit_disease :id ?id .
+  ?ncit_disease :label ?label .
+}
+WHERE {
+  GRAPH <http://rdf.integbio.jp/dataset/bioportal/ncit> {
+    ?ncit_disease a owl:Class ;
+      ncit:NHC0 ?id ;
+      rdfs:label ?label .
+  
+    {{#if iri}}VALUES ?ncit_disease { {{join " " (as-iriref iri)}} }{{/if}}
+    {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
+  }
+}
+"""
+type ncit_disease {
+  iri: String!
+  id: String!
+  label: String!
+}

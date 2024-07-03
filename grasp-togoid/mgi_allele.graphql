@@ -1,0 +1,34 @@
+"""
+--- endpoint ---
+http://ep.dbcls.jp/togoid/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+CONSTRUCT {
+  ?mgi_allele :iri ?mgi_allele .
+  ?mgi_allele :id ?id .
+  ?mgi_allele :label ?label .
+}
+WHERE {
+  ?mgi_allele dcterms:identifier ?mgiid ;
+    rdfs:label ?label .
+
+  {{#if iri}}VALUES ?mgi_allele { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if id}}
+    VALUES ?mgiid {
+      {{#each id as |_id|}}
+        "MGI:{{_id}}"
+      {{/each}}
+    }
+  {{/if}}
+  BIND (strafter(?mgiid, "MGI:") AS ?id)
+}
+"""
+type mgi_allele {
+  iri: String!
+  id: String!
+  label: String!
+}

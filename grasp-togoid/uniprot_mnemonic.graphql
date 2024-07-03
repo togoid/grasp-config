@@ -1,0 +1,37 @@
+"""
+--- endpoint ---
+https://rdfportal.org/sib/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX core: <http://purl.uniprot.org/core/>
+
+CONSTRUCT {
+  ?uniprot_mnemonic :iri ?uniprot_mnemonic .
+  ?uniprot_mnemonic :label ?label .
+  ?uniprot_mnemonic :id ?id .
+}
+WHERE {
+  ?uniprot_mnemonic a core:Protein ;
+    core:mnemonic ?id .
+  OPTIONAL {
+    {
+      ?uniprot_mnemonic core:recommendedName / core:fullName ?label .
+    }
+    UNION
+    {
+      ?uniprot_mnemonic core:submittedName / core:fullName ?label .
+    }
+#   ?uniprot_mnemonic core:recommendedName / core:fullName ?label .
+#   ?Uniprot (core:recommendedName / core:fullName) | (core:submittedName / core:fullName) ?label .
+  }
+
+  {{#if iri}}VALUES ?uniprot_mnemonic { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
+}
+"""
+type uniprot_mnemonic {
+  iri: String!
+  label: String!
+  id: String!
+}

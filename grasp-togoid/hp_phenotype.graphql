@@ -1,0 +1,38 @@
+"""
+--- endpoint ---
+https://rdfportal.org/primary/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX oboinowl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+CONSTRUCT {
+  ?hp_phenotype :iri ?hp_phenotype .
+  ?hp_phenotype :id ?id .
+  ?hp_phenotype :label ?label .
+}
+FROM <http://rdfportal.org/ontology/hp>
+WHERE {
+  ?hp_phenotype a owl:Class ;
+    oboinowl:id ?hpid ;
+    rdfs:label ?label .
+
+  {{#if iri}}VALUES ?hp_phenotype { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if id}}
+    VALUES ?hpid {
+      {{#each id as |_id|}}
+        "HP:{{_id}}"^^xsd:string
+      {{/each}}
+    }
+  {{/if}}
+  BIND (strafter(?hpid, "HP:") AS ?id)
+}
+"""
+type hp_phenotype {
+  iri: String!
+  id: String!
+  label: [String!]
+}

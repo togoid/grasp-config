@@ -1,0 +1,29 @@
+"""
+--- endpoint ---
+http://sparql.nibb.ac.jp/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX orth: <http://purl.org/net/orth#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+CONSTRUCT {
+  ?mbgd_gene :iri ?mbgd_gene .
+  ?mbgd_gene :label ?label .
+  ?mbgd_gene :id ?id .
+}
+WHERE {
+  ?mbgd_gene a orth:Gene ;
+    rdfs:label ?label ;
+    dcterms:identifier ?id .
+
+  {{#if iri}}VALUES ?mbgd_gene { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
+}
+"""
+type mbgd_gene {
+  iri: String!
+  label: String!
+  id: String!
+}

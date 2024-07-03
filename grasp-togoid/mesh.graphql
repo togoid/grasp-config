@@ -1,0 +1,29 @@
+"""
+--- endpoint ---
+https://id.nlm.nih.gov/mesh/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX meshv: <http://id.nlm.nih.gov/mesh/vocab#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+CONSTRUCT {
+  ?mesh :iri ?mesh .
+  ?mesh :label ?label .
+  ?mesh :id ?id .
+}
+WHERE {
+  VALUES ?mesh__class { meshv:Concept meshv:Term meshv:TopicalDescriptor meshv:PublicationType meshv:CheckTag meshv:GeographicalDescriptor meshv:Qualifier meshv:TreeNumber meshv:SCR_Chemical meshv:SCR_Disease meshv:SCR_Protocol meshv:SCR_Organism }
+  ?mesh a ?mesh__class ;
+    rdfs:label ?label ;
+    meshv:identifier ?id .
+
+  {{#if iri}}VALUES ?mesh { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
+}
+"""
+type mesh {
+  iri: String!
+  label: String!
+  id: String!
+}
