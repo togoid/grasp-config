@@ -1,0 +1,5 @@
+- Prosite prosite:PS00001:
+  - dcterms:identifier:
+    - id: "PS00001"
+  - rdfs:label:
+    - label: "N-glycosylation site."

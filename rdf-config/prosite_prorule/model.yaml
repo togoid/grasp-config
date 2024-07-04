@@ -1,0 +1,5 @@
+- PrositeProrule prorule:PRU00021:
+  - dcterms:identifier:
+    - id: "PRU00021"
+  - rdfs:label:
+    - label: "AFP-like domain"

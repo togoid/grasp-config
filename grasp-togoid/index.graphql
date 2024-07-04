@@ -42,6 +42,8 @@ type Query {
   pdb(iri: [String] , id: [String] ): [pdb]!
   pdb_ccd(iri: [String] , id: [String] ): [pdb_ccd]!
   pfam(iri: [String] , id: [String] ): [pfam]!
+  prosite(iri: [String] , id: [String] ): [prosite]!
+  prosite_prorule(iri: [String] , id: [String] ): [prosite_prorule]!
   pubchem_compound(iri: [String] , id: [String] ): [pubchem_compound]!
   pubchem_pathway(iri: [String] , id: [String] ): [pubchem_pathway]!
   pubmed(iri: [String] , id: [String] ): [pubmed]!

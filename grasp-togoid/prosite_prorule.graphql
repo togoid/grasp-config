@@ -1,0 +1,27 @@
+"""
+--- endpoint ---
+http://ep.dbcls.jp/togoid/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+CONSTRUCT {
+  ?prosite_prorule :iri ?prosite_prorule .
+  ?prosite_prorule :id ?id .
+  ?prosite_prorule :label ?label .
+}
+WHERE {
+  ?prosite_prorule dcterms:identifier ?id ;
+    rdfs:label ?label .
+
+  {{#if iri}}VALUES ?prosite_prorule { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
+}
+"""
+type prosite_prorule {
+  iri: String!
+  id: String!
+  label: String!
+}
