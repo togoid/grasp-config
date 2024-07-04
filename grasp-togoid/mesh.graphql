@@ -1,6 +1,6 @@
 """
 --- endpoint ---
-https://id.nlm.nih.gov/mesh/sparql
+https://rdfportal.org/ncbi/sparql
 
 --- sparql ---
 PREFIX : <https://github.com/dbcls/grasp/ns/>

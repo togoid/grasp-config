@@ -1,4 +1,6 @@
-endpoint: https://id.nlm.nih.gov/mesh/sparql
+endpoint: https://rdfportal.org/ncbi/sparql
+
+nih: https://id.nlm.nih.gov/mesh/sparql
 
 med2rdf:
   - http://sparql.med2rdf.org/sparql
