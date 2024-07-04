@@ -1,6 +1,6 @@
 """
 --- endpoint ---
-http://sparql.wikipathways.org/sparql
+https://sparql.wikipathways.org/sparql
 
 --- sparql ---
 PREFIX : <https://github.com/dbcls/grasp/ns/>

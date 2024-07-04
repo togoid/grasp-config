@@ -1,3 +1,3 @@
-endpoint: http://sparql.wikipathways.org/sparql
+endpoint: https://sparql.wikipathways.org/sparql
 graphs:
   - http://rdf.wikipathways.org/
