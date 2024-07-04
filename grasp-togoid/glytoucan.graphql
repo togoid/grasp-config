@@ -1,0 +1,29 @@
+"""
+--- endpoint ---
+https://ts.glycosmos.org/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX glycan: <http://purl.jp/bio/12/glyco/glycan#>
+PREFIX glytoucan: <http://www.glytoucan.org/glyco/owl/glytoucan#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+CONSTRUCT {
+  ?glytoucan :iri ?glytoucan .
+  ?glytoucan :id ?id .
+  ?glytoucan :label ?label .
+}
+WHERE {
+  ?glytoucan a glycan:Saccharide ;
+    glytoucan:has_primary_id ?id ;
+    skos:altLabel ?label .
+
+  {{#if iri}}VALUES ?glytoucan { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
+}
+"""
+type glytoucan {
+  iri: String!
+  id: String!
+  label: String!
+}

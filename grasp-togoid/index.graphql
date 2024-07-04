@@ -3,6 +3,7 @@ directive @embedded on OBJECT
 type Query {
   atc(iri: [String] , id: [String] ): [atc]!
   bioproject(iri: [String] , id: [String] ): [bioproject]!
+  biosample(iri: [String] , id: [String] ): [biosample]!
   cellosaurus(iri: [String] , id: [String] ): [cellosaurus]!
   chebi(iri: [String] , id: [String] ): [chebi]!
   chembl_compound(iri: [String] , id: [String] ): [chembl_compound]!
@@ -14,6 +15,7 @@ type Query {
   ensembl_gene(iri: [String] , id: [String] ): [ensembl_gene]!
   ensembl_transcript(iri: [String] , id: [String] ): [ensembl_transcript]!
   flybase_gene(iri: [String] , id: [String] ): [flybase_gene]!
+  glytoucan(iri: [String] , id: [String] ): [glytoucan]!
   go(iri: [String] , id: [String] ): [go]!
   hgnc(iri: [String] , id: [String] ): [hgnc]!
   hmdb(iri: [String] , id: [String] ): [hmdb]!
@@ -38,11 +40,13 @@ type Query {
   orphanet_phenotype(iri: [String] , id: [String] ): [orphanet_phenotype]!
   pathbank(iri: [String] , id: [String] ): [pathbank]!
   pdb(iri: [String] , id: [String] ): [pdb]!
-  pdbCcd(iri: [String] , id: [String] ): [pdb_ccd]!
+  pdb_ccd(iri: [String] , id: [String] ): [pdb_ccd]!
   pfam(iri: [String] , id: [String] ): [pfam]!
   pubchem_compound(iri: [String] , id: [String] ): [pubchem_compound]!
   pubchem_pathway(iri: [String] , id: [String] ): [pubchem_pathway]!
   pubmed(iri: [String] , id: [String] ): [pubmed]!
+  reactome_pathway(iri: [String] , id: [String] ): [reactome_pathway]!
+  reactome_reaction(iri: [String] , id: [String] ): [reactome_reaction]!
   refseq_rna(iri: [String] , id: [String] ): [refseq_rna]!
   rgd(iri: [String] , id: [String] ): [rgd]!
   rhea(iri: [String] , id: [String] ): [rhea]!

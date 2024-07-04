@@ -1,0 +1,37 @@
+"""
+--- endpoint ---
+https://rdfportal.org/ebi/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX biopax: <http://www.biopax.org/release/biopax-level3.owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+CONSTRUCT {
+  ?reactome_reaction :iri ?reactome_reaction .
+  ?reactome_reaction :label ?label .
+  ?reactome_reaction :id ?id .
+}
+WHERE {
+  ?reactome_reaction a biopax:BiochemicalReaction ;
+    biopax:displayName ?label ;
+    biopax:xref [
+      biopax:db "Reactome"^^xsd:string ;
+      biopax:id ?id
+    ] .
+
+  {{#if iri}}VALUES ?reactome_reaction { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if id}}
+    VALUES ?id {
+    {{#each id as |_id|}}
+      "{{_id}}"^^xsd:string
+    {{/each}}
+    }
+  {{/if}}
+}
+"""
+type reactome_reaction {
+  iri: String!
+  label: String!
+  id: String!
+}
