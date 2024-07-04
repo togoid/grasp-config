@@ -1,0 +1,10 @@
+- ReactomeReaction reactome:BiochemicalReaction4485:
+  - a: biopax:BiochemicalReaction
+  - biopax:displayName:
+    - label: "PGM:Mg2+ isomerise G6P to G1P"
+  - biopax:xref:
+    - []:
+      - biopax:db:
+          - db: '"Reactome"^^xsd:string'
+      - biopax:id:
+          - id: "R-CFA-210277"

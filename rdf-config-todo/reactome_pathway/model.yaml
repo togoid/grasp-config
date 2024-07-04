@@ -1,0 +1,10 @@
+- ReactomePathway reactome:Pathway655:
+  - a: biopax:Pathway
+  - biopax:displayName:
+    - label: "Biosynthesis of specialized proresolving mediators (SPMs)"
+  - biopax:xref:
+    - []:
+      - biopax:db:
+          - db: '"Reactome"^^xsd:string'
+      - biopax:id:
+          - id: "R-CFA-9018678"

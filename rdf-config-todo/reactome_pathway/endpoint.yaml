@@ -1,0 +1,3 @@
+endpoint: https://rdfportal.org/ebi/sparql
+graph:
+  - http://rdf.ebi.ac.uk/dataset/reactome
