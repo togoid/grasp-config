@@ -1,1 +1,1 @@
-endpoint: http://virtuoso:8890/sparql
+endpoint: http://ep.dbcls.jp/togoid/sparql

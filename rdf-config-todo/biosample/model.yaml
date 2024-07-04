@@ -1,6 +1,7 @@
 - BioSample idorg_biosample:SAMD00222921:
-  - a: biosample_ont:BioSampleRecord
+  # - a: biosample_ont:BioSampleRecord
   - dct:identifier:
     - id: "SAMD00222921"
   - rdfs:label:
     - label: "24 h after HCV infection"
+
