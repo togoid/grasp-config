@@ -13,7 +13,7 @@ CONSTRUCT {
   ?cellosaurus :label ?label .
 }
 WHERE {
-  ?cellosaurus dcterms:identifier ?id ;
+  ?cellosaurus dcterms:identifier ?cvclid ;
     rdfs:label ?label .
 
   {{#if iri}}VALUES ?cellosaurus { {{join " " (as-iriref iri)}} }{{/if}}
