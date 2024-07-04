@@ -1,4 +1,4 @@
-- Glycan glycanid:G00054MO:
+- Glytoucan glycanid:G00054MO:
   - a:
       - glycan:Saccharide
   - glytoucan:has_primary_id:

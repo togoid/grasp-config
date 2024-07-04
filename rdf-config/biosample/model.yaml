@@ -1,4 +1,4 @@
-- BioSample idorg_biosample:SAMD00222921:
+- Biosample idorg_biosample:SAMD00222921:
   # - a: biosample_ont:BioSampleRecord
   - dct:identifier:
     - id: "SAMD00222921"
