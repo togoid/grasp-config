@@ -1,6 +1,6 @@
 - Ncbigene ncbigene:34:
   - a: insdc:Gene
   - dct:identifier:
-    - id: 34
+    - id: "34"
   - rdfs:label:
     - label: "ACADM"
