@@ -13,11 +13,13 @@ CONSTRUCT {
   ?ec :label ?label .
 }
 WHERE {
+  GRAPH <http://togoid.dbcls.jp/graph/ec-label> {
   ?ec dcterms:identifier ?id ;
     rdfs:label ?label .
 
   {{#if iri}}VALUES ?ec { {{join " " (as-iriref iri)}} }{{/if}}
   {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
+  }
 }
 """
 type ec {

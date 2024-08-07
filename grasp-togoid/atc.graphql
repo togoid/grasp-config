@@ -13,11 +13,13 @@ CONSTRUCT {
   ?atc :label ?label .
 }
 WHERE {
+  GRAPH <http://togoid.dbcls.jp/graph/atc-label> {
   ?atc dcterms:identifier ?id ;
     rdfs:label ?label .
 
   {{#if iri}}VALUES ?atc { {{join " " (as-iriref iri)}} }{{/if}}
   {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
+  }
 }
 """
 type atc {

@@ -13,6 +13,7 @@ CONSTRUCT {
   ?mgi_gene :label ?label .
 }
 WHERE {
+  GRAPH <http://togoid.dbcls.jp/graph/mgi_gene-label> {
   ?mgi_gene dcterms:identifier ?mgiid ;
     rdfs:label ?label .
 
@@ -25,6 +26,7 @@ WHERE {
     }
   {{/if}}
   BIND (strafter(?mgiid, "MGI:") AS ?id)
+  }
 }
 """
 type mgi_gene {

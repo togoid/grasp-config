@@ -13,11 +13,13 @@ CONSTRUCT {
   ?interpro :label ?label .
 }
 WHERE {
+  GRAPH <http://togoid.dbcls.jp/graph/interpro-label> {
   ?interpro dcterms:identifier ?id ;
     rdfs:label ?label .
 
   {{#if iri}}VALUES ?interpro { {{join " " (as-iriref iri)}} }{{/if}}
   {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
+  }
 }
 """
 type interpro {

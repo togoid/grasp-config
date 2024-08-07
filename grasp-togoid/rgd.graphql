@@ -13,11 +13,13 @@ CONSTRUCT {
   ?rgd :label ?label .
 }
 WHERE {
+  GRAPH <http://togoid.dbcls.jp/graph/rgd-label> {
   ?rgd dcterms:identifier ?id ;
     rdfs:label ?label .
 
   {{#if iri}}VALUES ?rgd { {{join " " (as-iriref iri)}} }{{/if}}
   {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
+  }
 }
 """
 type rgd {

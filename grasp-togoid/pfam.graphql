@@ -13,11 +13,13 @@ CONSTRUCT {
   ?pfam :label ?label .
 }
 WHERE {
+  GRAPH <http://togoid.dbcls.jp/graph/pfam-label> {
   ?pfam dcterms:identifier ?id ;
     rdfs:label ?label .
 
   {{#if iri}}VALUES ?pfam { {{join " " (as-iriref iri)}} }{{/if}}
   {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
+  }
 }
 """
 type pfam {

@@ -13,11 +13,13 @@ CONSTRUCT {
   ?prosite_prorule :label ?label .
 }
 WHERE {
+  GRAPH <http://togoid.dbcls.jp/graph/prosite_prorule-label> {
   ?prosite_prorule dcterms:identifier ?id ;
     rdfs:label ?label .
 
   {{#if iri}}VALUES ?prosite_prorule { {{join " " (as-iriref iri)}} }{{/if}}
   {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
+  }
 }
 """
 type prosite_prorule {

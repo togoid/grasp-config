@@ -13,11 +13,13 @@ CONSTRUCT {
   ?vgnc :label ?label .
 }
 WHERE {
+  GRAPH <http://togoid.dbcls.jp/graph/vgnc-label> {
   ?vgnc dcterms:identifier ?id ;
     rdfs:label ?label .
 
   {{#if iri}}VALUES ?vgnc { {{join " " (as-iriref iri)}} }{{/if}}
   {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
+  }
 }
 """
 type vgnc {

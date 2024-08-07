@@ -13,11 +13,13 @@ CONSTRUCT {
   ?tair :label ?label .
 }
 WHERE {
+  GRAPH <http://togoid.dbcls.jp/graph/tair-label> {
   ?tair dcterms:identifier ?id ;
     rdfs:label ?label .
 
   {{#if iri}}VALUES ?tair { {{join " " (as-iriref iri)}} }{{/if}}
   {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
+  }
 }
 """
 type tair {
