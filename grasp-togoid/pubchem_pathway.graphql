@@ -13,11 +13,19 @@ CONSTRUCT {
   ?pubchem_pathway :label ?label .
 }
 WHERE {
+  GRAPH <http://togoid.dbcls.jp/graph/pubchem_pathway-label> {
   ?pubchem_pathway dcterms:identifier ?id ;
     rdfs:label ?label .
 
   {{#if iri}}VALUES ?pubchem_pathway { {{join " " (as-iriref iri)}} }{{/if}}
-  {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
+  {{#if id}}
+    VALUES ?id {
+    {{#each id as |_id|}}
+      "PWID{{_id}}"
+    {{/each}}
+    }
+  {{/if}}
+  }
 }
 """
 type pubchem_pathway {
