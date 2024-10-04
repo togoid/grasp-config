@@ -14,6 +14,7 @@ CONSTRUCT {
   ?hp_inheritance :id ?id .
   ?hp_inheritance :label ?label .
 }
+FROM <http://rdfportal.org/ontology/hp>
 WHERE {
   ?hp_inheritance a owl:Class ;
     oboinowl:id ?hpid ;
@@ -34,5 +35,5 @@ WHERE {
 type hp_inheritance {
   iri: String!
   id: String!
-  label: [String!]
+  label: String!
 }

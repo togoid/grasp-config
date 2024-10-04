@@ -33,6 +33,6 @@ WHERE {
 """
 type pubchem_compound {
   iri: String!
-  id: [String!]
-  label: [String!]
+  id: String!
+  label: String!
 }
