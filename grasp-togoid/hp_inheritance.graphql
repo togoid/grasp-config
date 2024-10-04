@@ -29,7 +29,6 @@ WHERE {
     }
   {{/if}}
   BIND (strafter(?hpid, "HP:") AS ?id)
-  FILTER (lang(?label) = "en")
 }
 """
 type hp_inheritance {
