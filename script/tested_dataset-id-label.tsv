@@ -1,0 +1,65 @@
+atc	J01DD11	cefpiramide
+bioproject	PRJDB575	Genome sequencing of Prevotella paludivivens JCM 13650
+biosample	SAMD00003683	3MeK27H3_WCE_Hyp_DLD-1
+cellosaurus	7T24	DA03971
+chebi	84824	aromatic L-alpha-amino acid zwitterion
+chembl_compound	CHEMBL1200335	TESTOSTERONE ENANTHATE
+chembl_target	CHEMBL2788	Tubulin beta chain
+clinvar	658761	NM_198576.4(AGRN):c.3001C>A (p.Pro1001Thr)
+cog	COG0130	tRNA U55 pseudouridine synthase TruB, may also work on U342 of tmRNA
+doid	9036	parotid gland cancer
+ec	1.6.3.1	NAD(P)H oxidase (H2O2-forming)
+ensembl_gene	ENSG00000186283	TOR3A
+ensembl_transcript	ENST00000638000	ARID1B-235
+flybase_gene	FBgn0040373	CG3038
+glytoucan	G00050MO	Fuc(a1-2)Gal(b1-3)GlcNAc(b1-3)Gal(b1-4)Glc(b1-
+go	0005643	nuclear pore
+hgnc	26199	KATNBL1
+hmdb	HMDB0029433	L-2-Amino-4-methylenepentanedioic acid
+homologene	117	Gene conserved in Euteleostomi
+hp_inheritance	0032382	Uniparental disomy
+hp_phenotype	0001947	Renal tubular acidosis
+interpro	IPR038152	Carbamoyltransferase, C-terminal domain superfamily
+mbgd_gene	ash:AL1_RS02290	gyrB
+mbgd_organism	lac	Lactobacillus acidophilus NCFM
+medgen	C0264897	Accelerated atrioventricular conduction
+mesh	D002065	Buspirone
+mgi_allele	1857242	Rb1<tm1Tyj>
+mgi_gene	2387184	Mboat1
+mgi_genotype	2166359	Rb1<tm1Tyj>/Rb1<tm1Tyj>
+mirbase	MI0003587	MIR580
+mondo	0000115	Chiari malformation
+mp	0000600	liver hypoplasia
+nando	1200461	Rubinstein-Taybi syndrome
+ncbigene	1	A1BG
+ncit_disease	C48829	Primary Lymphedema
+ncit_tissue	C12279	Supraglottis
+orphanet_phenotype	101078	X-linked Charcot-Marie-Tooth disease type 4
+pathbank	SMP0000055	Alanine Metabolism
+pdb	3PFQ	Crystal Structure and Allosteric Activation of Protein Kinase C beta II
+pdb_ccd	D5Y	methyl 3-(5-bromo-2,4-dioxo-3,4-dihydropyrimidin-1(2H)-yl)-L-alaninate
+pfam	PF03719	Small ribosomal subunit protein uS5, C-terminal
+prosite	PS01177	Anaphylatoxin domain signature.
+prosite_prorule	PRU00498	N-glycosylation site
+pubchem_compound	9548669	(4S,5S)-4,5-dihydroxy-2-oxohexanoate
+pubchem_pathway	10572	Transport of small molecules
+pubmed	19281226	Lipophilic lysine-spermine conjugates are potent polyamine transport inhibitors for use in combination with a polyamine biosynthesis inhibitor.
+reactome_pathway	R-HSA-165159	MTOR signalling
+reactome_reaction	R-DRE-1482961	CDP-Cho and DAG are converted to PC by CEPT1 at the ER membrane
+refseq_rna	NM_002467	Homo sapiens MYC proto-oncogene, bHLH transcription factor (MYC), transcript variant 1, mRNA.
+rgd	1308312	Irf2bp1
+rhea	10253	H(+) + hydrogen sulfide + O-phospho-L-serine => L-cysteine + phosphate
+sgd	S000003096	CWC23
+swisslipids	000000002	Ceramide (iso-d17:1(4E))
+tair	AT3G60400	SHOT1
+taxonomy	1171376	Salmonella enterica subsp. enterica serovar Typhimurium str. U288
+togovar	tgv100005930	7:g.49813062C>T
+uberon	0002115	jejunum
+uniprot	A0A174V9D2	Clostripain
+uniprot_mnemonic	2ABA_ORYSJ	Serine/threonine protein phosphatase 2A 55 kDa regulatory subunit B alpha isoform
+uniprot_reference_proteome	UP000005640	Homo sapiens (Human)
+vgnc	39230	CHRDL2
+wikipathways	WP1531	Vitamin D metabolism
+wormbase_gene	WBGene00016754	cebp-2
+xenbase_gene	XB-GENE-877040	naa30
+zfin_gene	ZDB-GENE-030131-9947	sb:cb92
