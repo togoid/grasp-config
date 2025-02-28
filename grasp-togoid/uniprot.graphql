@@ -10,6 +10,8 @@ CONSTRUCT {
   ?uniprot :iri ?uniprot .
   ?uniprot :id ?id .
   ?uniprot :label ?label .
+  ?uniprot :short_name ?short_name .
+  ?uniprot :reviewed ?reviewed .
 }
 WHERE {
   {{#if iri}}
@@ -20,8 +22,15 @@ WHERE {
     VALUES ?id { {{join " " (as-string id)}} }
     BIND (iri(concat("http://purl.uniprot.org/uniprot/", ?id)) AS ?uniprot)
   {{/if}}
-  ?uniprot a core:Protein .
-#   core:recommendedName / core:fullName ?label .
+  {{#if reviewed}}
+    VALUES ?reviewed {
+        {{#each reviewed as |_reviewed|}}
+          "{{_reviewed}}"^^xsd:boolean
+        {{/each}}
+        }
+  {{/if}}
+  ?uniprot a core:Protein ;
+    core:reviewed ?reviewed .
   {
     ?uniprot core:recommendedName / core:fullName ?label .
   }
@@ -29,10 +38,15 @@ WHERE {
   {
     ?uniprot core:submittedName / core:fullName ?label .
   }
+  OPTIONAL {
+    ?uniprot core:recommendedName / core:shortName ?short_name .
+  }
 }
 """
 type uniprot {
   iri: String!
   id: String!
   label: String!
+  short_name: String
+  reviewed: String!
 }
