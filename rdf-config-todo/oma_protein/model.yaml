@@ -1,0 +1,6 @@
+- OmaProtein oma:AERPE00686:
+  - a: orth:Protein
+  - rdfs:label:
+    - label: "RPL14E"
+  - dcterms:identifier:
+      - id: "AERPE00686"
