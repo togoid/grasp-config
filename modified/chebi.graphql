@@ -24,12 +24,6 @@ WHERE {
     OPTIONAL {
       ?chebi obochebi:mass ?mass_str .
       BIND (xsd:float(?mass_str) as ?mass)
-      {{#if mass_upper}}
-        FILTER (?mass < {{mass_upper}})
-      {{/if}}
-      {{#if mass_lower}}
-        FILTER (?mass > {{mass_lower}})
-      {{/if}}
     }
 
     {{#if iri}}VALUES ?chebi { {{join " " (as-iriref iri)}} }{{/if}}
@@ -41,6 +35,12 @@ WHERE {
       }
     {{/if}}
   }
+  {{#if mass_upper}}
+    FILTER (?mass < {{mass_upper}})
+  {{/if}}
+  {{#if mass_lower}}
+    FILTER (?mass > {{mass_lower}})
+  {{/if}}
   BIND (strafter(?chebiid, "CHEBI:") AS ?id)
 }
 """
@@ -48,5 +48,5 @@ type chebi {
   iri: String!
   id: String!
   label: String!
-  mass: Float!
+  mass: Float
 }
