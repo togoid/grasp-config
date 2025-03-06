@@ -5,7 +5,7 @@ type Query {
   bioproject(iri: [String] , id: [String] ): [bioproject]!
   biosample(iri: [String] , id: [String] ): [biosample]!
   cellosaurus(iri: [String] , id: [String] ): [cellosaurus]!
-  chebi(iri: [String] , id: [String] ): [chebi]!
+  chebi(iri: [String] , id: [String] , mass_upper: Float, mass_lower: Float): [chebi]!
   chembl_compound(iri: [String] , id: [String] ): [chembl_compound]!
   chembl_target(iri: [String] , id: [String] ): [chembl_target]!
   clinvar(iri: [String] , id: [String] ): [clinvar]!
