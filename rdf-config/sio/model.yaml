@@ -1,0 +1,6 @@
+- Sio sio:SIO_000216:
+  - a: owl:ObjectProperty
+  - dc:identifier:
+    - id: "SIO_000216"
+  - rdfs:label:
+    - label: "has measurement value"

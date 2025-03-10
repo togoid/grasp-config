@@ -1,0 +1,37 @@
+"""
+--- endpoint ---
+https://rdfportal.org/primary/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+CONSTRUCT {
+  ?sio :iri ?sio .
+  ?sio :id ?id .
+  ?sio :label ?label .
+}
+WHERE {
+  ?sio a owl:ObjectProperty ;
+    dc:identifier ?sio_id ;
+    rdfs:label ?label .
+
+  {{#if iri}}VALUES ?sio { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if id}}
+    VALUES ?sio_id {
+      {{#each id as |_id|}}
+        "SIO_{{_id}}"
+      {{/each}}
+    }
+  {{/if}}
+  BIND (strafter(?sio_id, "SIO_") AS ?id)
+
+}
+"""
+type sio {
+  iri: String!
+  id: String!
+  label: String!
+}

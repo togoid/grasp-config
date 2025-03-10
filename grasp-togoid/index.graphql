@@ -53,6 +53,7 @@ type Query {
   rgd(iri: [String] , id: [String] ): [rgd]!
   rhea(iri: [String] , id: [String] ): [rhea]!
   sgd(iri: [String] , id: [String] ): [sgd]!
+  sio(iri: [String] , id: [String] ): [sio]!
   swisslipids(iri: [String] , id: [String] ): [swisslipids]!
   tair(iri: [String] , id: [String] ): [tair]!
   taxonomy(iri: [String] , id: [String] ): [taxonomy]!
