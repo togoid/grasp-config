@@ -1,6 +1,6 @@
 """
 --- endpoint ---
-http://ep.dbcls.jp/togoid/sparql
+https://dx.dbcls.jp/togoid/sparql
 
 --- sparql ---
 PREFIX : <https://github.com/dbcls/grasp/ns/>
