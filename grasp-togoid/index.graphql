@@ -13,7 +13,7 @@ type Query {
   doid(iri: [String] , id: [String] ): [doid]!
   ec(iri: [String] , id: [String] ): [ec]!
   ensembl_gene(iri: [String] , id: [String] ): [ensembl_gene]!
-  ensembl_transcript(iri: [String] , id: [String] ): [ensembl_transcript]!
+  ensembl_transcript(iri: [String] , id: [String] , flag: [String]): [ensembl_transcript]!
   flybase_gene(iri: [String] , id: [String] ): [flybase_gene]!
   glytoucan(iri: [String] , id: [String] ): [glytoucan]!
   go(iri: [String] , id: [String] ): [go]!
