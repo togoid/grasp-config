@@ -13,24 +13,24 @@ CONSTRUCT {
   ?ensembl_transcript :iri ?ensembl_transcript .
   ?ensembl_transcript :id ?id .
   ?ensembl_transcript :label ?label .
-  ?ensembl_transcript :flag ?flag .
+  ?ensembl_transcript :transcript_flag ?transcript_flag .
 }
 WHERE {
   GRAPH <http://rdfportal.org/dataset/ensembl> {
     ?ensembl_transcript a terms:EnsemblTranscript ;
       dcterms:identifier ?id ;
-      terms:has_transcript_flag / rdfs:label ?flag ;
-      {{#if flag}}
-      # To obtain flags other than specified flags, ?filter_flag (= flags to be used for filtering) and ?flag (= all flags an entry has) must be distinguished.
+      terms:has_transcript_flag / rdfs:label ?transcript_flag ;
+      {{#if transcript_flag}}
+      # To obtain flags other than specified flags, ?filter_flag (= flags to be used for filtering) and ?transcript_flag (= all flags an entry has) must be distinguished.
       terms:has_transcript_flag / rdfs:label ?filter_flag ;
       {{/if}}
       rdfs:label ?label .
   
     {{#if iri}}VALUES ?ensembl_transcript { {{join " " (as-iriref iri)}} }{{/if}}
     {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
-    {{#if flag}}
+    {{#if transcript_flag}}
       VALUES ?filter_flag {
-        {{#each flag as |_flag|}}
+        {{#each transcript_flag as |_flag|}}
           "{{_flag}}"^^xsd:string
         {{/each}}
       }
@@ -42,5 +42,5 @@ type ensembl_transcript {
   iri: String!
   id: String!
   label: String!
-  flag: [String]
+  transcript_flag: [String]
 }
