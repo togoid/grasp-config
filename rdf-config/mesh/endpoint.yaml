@@ -1,4 +1,7 @@
-endpoint: https://rdfportal.org/ncbi/sparql
+endpoint:
+  - https://rdfportal.org/ncbi/sparql
+  - graph:
+    - http://id.nlm.nih.gov/mesh/2023
 
 nih: https://id.nlm.nih.gov/mesh/sparql
 
