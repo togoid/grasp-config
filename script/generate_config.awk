@@ -21,7 +21,7 @@ BEGIN {
 }
 
 FNR==1 {
-    dataset = gensub(/\.ttl$/, "", "g", FILENAME)
+    dataset = gensub(/(^.*\/)|(.ttl$)/, "", "g", FILENAME)
 }
 
 /^@prefix/ {
