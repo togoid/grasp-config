@@ -20,6 +20,10 @@ BEGIN {
     endpoint_yaml = dest "/endpoint.yaml"
 }
 
+FNR==1 {
+    dataset = gensub(/\.ttl$/, "", "g", FILENAME)
+}
+
 /^@prefix/ {
     gsub(/^@prefix /, "", $0)
     gsub(/ \.$/, "", $0)
@@ -43,5 +47,8 @@ $2=="rdfs:label" {
 }
 
 END {
-    print "endpoint: http://ep.dbcls.jp/togoid/sparql" > endpoint_yaml
+    print "endpoint:" > endpoint_yaml
+    print "  - http://ep.dbcls.jp/togoid/sparql" > endpoint_yaml
+    print "  - graph:" > endpoint_yaml
+    print "    - http://togoid.dbcls.jp/graph/" dataset "-label" > endpoint_yaml
 }
