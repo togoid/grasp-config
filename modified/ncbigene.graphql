@@ -19,11 +19,11 @@ WHERE {
     rdfs:label ?label .
 
   {{#if iri}}VALUES ?ncbigene { {{join " " (as-iriref iri)}} }{{/if}}
-  {{#if id}}VALUES ?id { {{join " " id}} }{{/if}}
+  {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
 }
 """
 type ncbigene {
   iri: String!
-  id: Int!
+  id: String!
   label: String!
 }
