@@ -13,6 +13,7 @@ CONSTRUCT {
   ?swisslipids :label ?label .
 }
 WHERE {
+  GRAPH <http://togoid.dbcls.jp/graph/swisslipids-label> {
   ?swisslipids dcterms:identifier ?slid ;
     rdfs:label ?label .
 
@@ -25,6 +26,7 @@ WHERE {
     }
   {{/if}}
   BIND (strafter(?slid, "SLM:") AS ?id)
+  }
 }
 """
 type swisslipids {

@@ -13,11 +13,13 @@ CONSTRUCT {
   ?hmdb :label ?label .
 }
 WHERE {
+  GRAPH <http://togoid.dbcls.jp/graph/hmdb-label> {
   ?hmdb dcterms:identifier ?id ;
     rdfs:label ?label .
 
   {{#if iri}}VALUES ?hmdb { {{join " " (as-iriref iri)}} }{{/if}}
   {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
+  }
 }
 """
 type hmdb {
