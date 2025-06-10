@@ -8,21 +8,21 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 CONSTRUCT {
-  ?vgnc :iri ?vgnc .
-  ?vgnc :id ?id .
-  ?vgnc :label ?label .
+  ?zfin_transcript :iri ?zfin_transcript .
+  ?zfin_transcript :id ?id .
+  ?zfin_transcript :label ?label .
 }
 WHERE {
-  GRAPH <http://togoid.dbcls.jp/graph/vgnc-label> {
-    ?vgnc dcterms:identifier ?id ;
+  GRAPH <http://togoid.dbcls.jp/graph/zfin_transcript-label> {
+    ?zfin_transcript dcterms:identifier ?id ;
       rdfs:label ?label .
   
-    {{#if iri}}VALUES ?vgnc { {{join " " (as-iriref iri)}} }{{/if}}
+    {{#if iri}}VALUES ?zfin_transcript { {{join " " (as-iriref iri)}} }{{/if}}
     {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
   }
 }
 """
-type vgnc {
+type zfin_transcript {
   iri: String!
   id: String!
   label: String!

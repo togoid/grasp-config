@@ -8,21 +8,21 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 CONSTRUCT {
-  ?vgnc :iri ?vgnc .
-  ?vgnc :id ?id .
-  ?vgnc :label ?label .
+  ?uniprot_proteome :iri ?uniprot_proteome .
+  ?uniprot_proteome :id ?id .
+  ?uniprot_proteome :label ?label .
 }
 WHERE {
-  GRAPH <http://togoid.dbcls.jp/graph/vgnc-label> {
-    ?vgnc dcterms:identifier ?id ;
+  GRAPH <http://togoid.dbcls.jp/graph/uniprot_proteome-label> {
+    ?uniprot_proteome dcterms:identifier ?id ;
       rdfs:label ?label .
   
-    {{#if iri}}VALUES ?vgnc { {{join " " (as-iriref iri)}} }{{/if}}
+    {{#if iri}}VALUES ?uniprot_proteome { {{join " " (as-iriref iri)}} }{{/if}}
     {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
   }
 }
 """
-type vgnc {
+type uniprot_proteome {
   iri: String!
   id: String!
   label: String!

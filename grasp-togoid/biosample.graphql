@@ -14,11 +14,11 @@ CONSTRUCT {
 }
 WHERE {
   GRAPH <http://togoid.dbcls.jp/graph/biosample-label> {
-  ?biosample dct:identifier ?id ;
-    rdfs:label ?label .
-
-  {{#if iri}}VALUES ?biosample { {{join " " (as-iriref iri)}} }{{/if}}
-  {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
+    ?biosample dct:identifier ?id ;
+      rdfs:label ?label .
+  
+    {{#if iri}}VALUES ?biosample { {{join " " (as-iriref iri)}} }{{/if}}
+    {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
   }
 }
 """
