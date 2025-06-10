@@ -1,0 +1,4 @@
+endpoint:
+  - http://ep.dbcls.jp/togoid/sparql
+  - graph:
+    - http://togoid.dbcls.jp/graph/mirbase_mature-label

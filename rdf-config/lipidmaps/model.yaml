@@ -1,0 +1,5 @@
+- Lipidmaps lipidmaps:LMFA00000001:
+  - dcterms:identifier:
+    - id: "LMFA00000001"
+  - rdfs:label:
+    - label: "2-methoxy-12-methyloctadec-17-en-5-ynoyl anhydride"

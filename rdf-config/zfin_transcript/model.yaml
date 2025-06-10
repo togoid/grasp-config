@@ -1,0 +1,5 @@
+- ZfinTranscript zfin_transcript:ZDB-TSCRIPT-090929-22972:
+  - dcterms:identifier:
+    - id: "ZDB-TSCRIPT-090929-22972"
+  - rdfs:label:
+    - label: "kifc1-002"

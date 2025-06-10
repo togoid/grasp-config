@@ -1,0 +1,5 @@
+- MirbaseMature mirbase_mature:MIMAT0000001:
+  - dcterms:identifier:
+    - id: "MIMAT0000001"
+  - rdfs:label:
+    - label: "cel-let-7-5p"
