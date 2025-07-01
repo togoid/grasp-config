@@ -24,7 +24,7 @@ WHERE {
       ?ensembl_transcript terms:has_transcript_flag / rdfs:label ?transcript_flag .
       {{#if transcript_flag}}
       # To obtain flags other than specified flags, ?filter_flag (= flags to be used for filtering) and ?transcript_flag (= all flags an entry has) must be distinguished.
-      ?ensembl_transcript terms:has_transcript_flag / rdfs:label ?filter_flag ;
+      ?ensembl_transcript terms:has_transcript_flag / rdfs:label ?filter_flag .
       {{/if}}
     }
 
