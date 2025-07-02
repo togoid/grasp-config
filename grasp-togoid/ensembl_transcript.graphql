@@ -20,13 +20,15 @@ WHERE {
     ?ensembl_transcript a terms:EnsemblTranscript ;
       dcterms:identifier ?id ;
       rdfs:label ?label .
+    {{#if transcript_flag}}
+    ?ensembl_transcript terms:has_transcript_flag / rdfs:label ?transcript_flag .
+    # To obtain flags other than specified flags, ?filter_flag (= flags to be used for filtering) and ?transcript_flag (= all flags an entry has) must be distinguished.
+    ?ensembl_transcript terms:has_transcript_flag / rdfs:label ?filter_flag .
+    {{else}}
     OPTIONAL {
       ?ensembl_transcript terms:has_transcript_flag / rdfs:label ?transcript_flag .
-      {{#if transcript_flag}}
-      # To obtain flags other than specified flags, ?filter_flag (= flags to be used for filtering) and ?transcript_flag (= all flags an entry has) must be distinguished.
-      ?ensembl_transcript terms:has_transcript_flag / rdfs:label ?filter_flag .
-      {{/if}}
     }
+    {{/if}}
 
     {{#if iri}}VALUES ?ensembl_transcript { {{join " " (as-iriref iri)}} }{{/if}}
     {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
