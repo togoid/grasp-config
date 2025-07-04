@@ -24,7 +24,7 @@ WHERE {
   {{#if id}}
     VALUES ?doidid {
       {{#each id as |_id|}}
-        "DOID:{{_id}}"^^xsd:string
+        "DOID:{{_id}}"
       {{/each}}
     }
   {{/if}}
