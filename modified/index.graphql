@@ -1,0 +1,77 @@
+directive @embedded on OBJECT
+
+type Query {
+  atc(iri: [String] , id: [String] ): [atc]!
+  bioproject(iri: [String] , id: [String] ): [bioproject]!
+  biosample(iri: [String] , id: [String] ): [biosample]!
+  cellosaurus(iri: [String] , id: [String] ): [cellosaurus]!
+  chebi(iri: [String] , id: [String] , mass_upper: Float, mass_lower: Float): [chebi]!
+  chembl_compound(iri: [String] , id: [String] ): [chembl_compound]!
+  chembl_target(iri: [String] , id: [String] ): [chembl_target]!
+  clinvar(iri: [String] , id: [String] ): [clinvar]!
+  cog(iri: [String] , id: [String] ): [cog]!
+  doid(iri: [String] , id: [String] ): [doid]!
+  ec(iri: [String] , id: [String] ): [ec]!
+  ensembl_gene(iri: [String] , id: [String] ): [ensembl_gene]!
+  ensembl_transcript(iri: [String] , id: [String] , transcript_flag: [String]): [ensembl_transcript]!
+  flybase_gene(iri: [String] , id: [String] ): [flybase_gene]!
+  flybase_protein(iri: [String] , id: [String] ): [flybase_protein]!
+  flybase_transcript(iri: [String] , id: [String] ): [flybase_transcript]!
+  glytoucan(iri: [String] , id: [String] ): [glytoucan]!
+  go(iri: [String] , id: [String] ): [go]!
+  hgnc(iri: [String] , id: [String] ): [hgnc]!
+  hmdb(iri: [String] , id: [String] ): [hmdb]!
+  homologene(iri: [String] , id: [String] ): [homologene]!
+  hp_inheritance(iri: [String] , id: [String] ): [hp_inheritance]!
+  hp_phenotype(iri: [String] , id: [String] ): [hp_phenotype]!
+  interpro(iri: [String] , id: [String] ): [interpro]!
+  lipidmaps(iri: [String] , id: [String] ): [lipidmaps]!
+  mbgd_gene(iri: [String] , id: [String] ): [mbgd_gene]!
+  mbgd_organism(iri: [String] , id: [String] ): [mbgd_organism]!
+  medgen(iri: [String] , id: [String] ): [medgen]!
+  mesh(iri: [String] , id: [String] ): [mesh]!
+  mgi_allele(iri: [String] , id: [String] ): [mgi_allele]!
+  mgi_gene(iri: [String] , id: [String] ): [mgi_gene]!
+  mgi_genotype(iri: [String] , id: [String] ): [mgi_genotype]!
+  mirbase(iri: [String] , id: [String] ): [mirbase]!
+  mirbase_mature(iri: [String] , id: [String] ): [mirbase_mature]!
+  mondo(iri: [String] , id: [String] ): [mondo]!
+  mp(iri: [String] , id: [String] ): [mp]!
+  nando(iri: [String] , id: [String] ): [nando]!
+  ncbigene(iri: [String] , id: [String] , type_of_gene: [String]): [ncbigene]!
+  ncit_disease(iri: [String] , id: [String] ): [ncit_disease]!
+  ncit_tissue(iri: [String] , id: [String] ): [ncit_tissue]!
+  orphanet_phenotype(iri: [String] , id: [String] ): [orphanet_phenotype]!
+  pathbank(iri: [String] , id: [String] ): [pathbank]!
+  pdb(iri: [String] , id: [String] ): [pdb]!
+  pdb_ccd(iri: [String] , id: [String] ): [pdb_ccd]!
+  pfam(iri: [String] , id: [String] ): [pfam]!
+  prosite(iri: [String] , id: [String] ): [prosite]!
+  prosite_prorule(iri: [String] , id: [String] ): [prosite_prorule]!
+  pubchem_compound(iri: [String] , id: [String] ): [pubchem_compound]!
+  pubchem_pathway(iri: [String] , id: [String] ): [pubchem_pathway]!
+  pubmed(iri: [String] , id: [String] ): [pubmed]!
+  reactome_pathway(iri: [String] , id: [String] ): [reactome_pathway]!
+  reactome_reaction(iri: [String] , id: [String] ): [reactome_reaction]!
+  refseq_rna(iri: [String] , id: [String] ): [refseq_rna]!
+  rgd(iri: [String] , id: [String] ): [rgd]!
+  rhea(iri: [String] , id: [String] ): [rhea]!
+  rnacentral(iri: [String] , id: [String] ): [rnacentral]!
+  sgd(iri: [String] , id: [String] ): [sgd]!
+  sio(iri: [String] , id: [String] ): [sio]!
+  swisslipids(iri: [String] , id: [String] ): [swisslipids]!
+  tair(iri: [String] , id: [String] ): [tair]!
+  taxonomy(iri: [String] , id: [String] ): [taxonomy]!
+  togovar(iri: [String] , id: [String] ): [togovar]!
+  uberon(iri: [String] , id: [String] ): [uberon]!
+  uniprot(iri: [String] , id: [String] , reviewed: [String]): [uniprot]!
+  uniprot_mnemonic(iri: [String] , id: [String] ): [uniprot_mnemonic]!
+  uniprot_proteome(iri: [String] , id: [String] ): [uniprot_proteome]!
+  uniprot_reference_proteome(iri: [String] , id: [String] ): [uniprot_reference_proteome]!
+  vgnc(iri: [String] , id: [String] ): [vgnc]!
+  wikipathways(iri: [String] , id: [String] ): [wikipathways]!
+  wormbase_gene(iri: [String] , id: [String] ): [wormbase_gene]!
+  xenbase_gene(iri: [String] , id: [String] ): [xenbase_gene]!
+  zfin_gene(iri: [String] , id: [String] ): [zfin_gene]!
+  zfin_transcript(iri: [String] , id: [String] ): [zfin_transcript]!
+}
