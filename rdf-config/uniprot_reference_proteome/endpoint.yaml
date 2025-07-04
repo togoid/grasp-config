@@ -1,1 +1,4 @@
-endpoint: http://ep.dbcls.jp/togoid/sparql
+endpoint:
+  - http://ep.dbcls.jp/togoid/sparql
+  - graph:
+    - http://togoid.dbcls.jp/graph/uniprot_reference_proteome-label

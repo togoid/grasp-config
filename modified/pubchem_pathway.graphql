@@ -1,0 +1,36 @@
+"""
+--- endpoint ---
+http://ep.dbcls.jp/togoid/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+CONSTRUCT {
+  ?pubchem_pathway :iri ?pubchem_pathway .
+  ?pubchem_pathway :id ?id .
+  ?pubchem_pathway :label ?label .
+}
+WHERE {
+  GRAPH <http://togoid.dbcls.jp/graph/pubchem_pathway-label> {
+  ?pubchem_pathway dcterms:identifier ?pubchem_pathway_id ;
+    rdfs:label ?label .
+
+  {{#if iri}}VALUES ?pubchem_pathway { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if id}}
+    VALUES ?pubchem_pathway_id {
+    {{#each id as |_id|}}
+      "PWID{{_id}}"
+    {{/each}}
+    }
+  {{/if}}
+  }
+  BIND (strafter(?pubchem_pathway_id, "PWID") AS ?id)
+}
+"""
+type pubchem_pathway {
+  iri: String!
+  id: String!
+  label: String!
+}

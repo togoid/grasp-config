@@ -25,5 +25,5 @@ WHERE {
 type togovar {
   iri: String!
   id: String!
-  label: String!
+  label: [String!]
 }

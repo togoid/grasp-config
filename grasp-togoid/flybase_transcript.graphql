@@ -1,0 +1,29 @@
+"""
+--- endpoint ---
+http://ep.dbcls.jp/togoid/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+CONSTRUCT {
+  ?flybase_transcript :iri ?flybase_transcript .
+  ?flybase_transcript :id ?id .
+  ?flybase_transcript :label ?label .
+}
+WHERE {
+  GRAPH <http://togoid.dbcls.jp/graph/flybase_transcript-label> {
+    ?flybase_transcript dcterms:identifier ?id ;
+      rdfs:label ?label .
+  
+    {{#if iri}}VALUES ?flybase_transcript { {{join " " (as-iriref iri)}} }{{/if}}
+    {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
+  }
+}
+"""
+type flybase_transcript {
+  iri: String!
+  id: String!
+  label: String!
+}

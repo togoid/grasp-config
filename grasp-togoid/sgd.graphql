@@ -14,11 +14,11 @@ CONSTRUCT {
 }
 WHERE {
   GRAPH <http://togoid.dbcls.jp/graph/sgd-label> {
-  ?sgd dcterms:identifier ?id ;
-    rdfs:label ?label .
-
-  {{#if iri}}VALUES ?sgd { {{join " " (as-iriref iri)}} }{{/if}}
-  {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
+    ?sgd dcterms:identifier ?id ;
+      rdfs:label ?label .
+  
+    {{#if iri}}VALUES ?sgd { {{join " " (as-iriref iri)}} }{{/if}}
+    {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
   }
 }
 """

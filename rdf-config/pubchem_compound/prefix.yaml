@@ -1,3 +1,3 @@
 compound: <http://rdf.ncbi.nlm.nih.gov/pubchem/compound/>
-descriptor: <http://rdf.ncbi.nlm.nih.gov/pubchem/descriptor/>
-sio: <http://semanticscience.org/resource/>
+dcterms: <http://purl.org/dc/terms/>
+skos: <http://www.w3.org/2004/02/skos/core#>

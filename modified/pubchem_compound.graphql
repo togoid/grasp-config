@@ -4,7 +4,8 @@ https://rdfportal.org/pubchem/sparql
 
 --- sparql ---
 PREFIX : <https://github.com/dbcls/grasp/ns/>
-PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 CONSTRUCT {
   ?pubchem_compound :iri ?pubchem_compound .
@@ -12,27 +13,15 @@ CONSTRUCT {
   ?pubchem_compound :label ?label .
 }
 WHERE {
-  ?pubchem_compound sio:SIO_000008 [
-      a sio:CHEMINF_000140 ;
-      sio:SIO_000300 ?id ;
-    ] ;
-    sio:SIO_000008 [
-      a sio:CHEMINF_000382 ;
-      sio:SIO_000300 ?label ;
-    ] .
+  ?pubchem_compound dcterms:identifier ?id ;
+    skos:prefLabel ?label .
 
   {{#if iri}}VALUES ?pubchem_compound { {{join " " (as-iriref iri)}} }{{/if}}
-  {{#if id}}
-    VALUES ?id {
-      {{#each id as |_id|}}
-        "{{_id}}"@en
-      {{/each}}
-    }
-  {{/if}}
+  {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
 }
 """
 type pubchem_compound {
   iri: String!
-  id: [String!]
-  label: [String!]
+  id: String!
+  label: String!
 }

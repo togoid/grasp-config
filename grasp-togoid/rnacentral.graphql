@@ -1,0 +1,29 @@
+"""
+--- endpoint ---
+http://ep.dbcls.jp/togoid/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+CONSTRUCT {
+  ?rnacentral :iri ?rnacentral .
+  ?rnacentral :id ?id .
+  ?rnacentral :label ?label .
+}
+WHERE {
+  GRAPH <http://togoid.dbcls.jp/graph/rnacentral-label> {
+    ?rnacentral dcterms:identifier ?id ;
+      rdfs:label ?label .
+  
+    {{#if iri}}VALUES ?rnacentral { {{join " " (as-iriref iri)}} }{{/if}}
+    {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
+  }
+}
+"""
+type rnacentral {
+  iri: String!
+  id: String!
+  label: String!
+}

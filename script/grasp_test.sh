@@ -1,18 +1,35 @@
 #! /bin/bash
 set -euo pipefail
 
-INPUT=$1
-cat $1 | while read ds id ;
+usage() {
+    echo "Usage: $0 <ID_TSV> <CONFIG_DIR> [URL]"
+    echo "  ID_TSV     : dataset-example_id.tsv"
+    echo "  CONFIG_DIR : grasp config directory"
+    echo "  URL        : GraphQL API URL (default: https://rdfportal.org/grasp-togoid)"
+    exit 1
+}
+
+if [ $# -lt 2 ]; then
+    usage
+fi
+
+ID_TSV=$1
+CONFIG_DIR=$2
+URL=${3:-"https://rdfportal.org/grasp-togoid"}
+
+DATASET_LIST=($(ls "$CONFIG_DIR" | sed 's/\.[^.]*$//'))
+
+cat $ID_TSV | while read ds id ;
 do
-    # ds=$(echo "$ds" | awk -F_ '{s=""; for(i=1; i<=NF; i++) s=s toupper(substr($i,1,1)) tolower(substr($i,2));print s}')
-    QUERY="query {
+    if [[ " ${DATASET_LIST[@]} " =~ " ${ds} " ]]; then
+        QUERY="query {
  $ds(id: \\\"$id\\\") {
     label
   }
 }"
 
-#$(sed "s/_DATASET_/$ds/g;s/_ID_/$id/g" query.gql)
-    QUERY="$(echo $QUERY)"
-    echo $QUERY
-    curl -X POST -H "Content-Type: application/json" -d "{ \"query\": \"$QUERY\"}" https://rdfportal.org/grasp-togoid
+        QUERY="$(echo $QUERY)"
+        # echo $QUERY
+        curl -sS -X POST -H "Content-Type: application/json" -d "{ \"query\": \"$QUERY\"}" $URL | jq -c --arg id "$id" '{id: $id, data: .data}'
+    fi
 done

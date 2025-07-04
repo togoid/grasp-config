@@ -14,11 +14,11 @@ CONSTRUCT {
 }
 WHERE {
   GRAPH <http://togoid.dbcls.jp/graph/prosite-label> {
-  ?prosite dcterms:identifier ?id ;
-    rdfs:label ?label .
-
-  {{#if iri}}VALUES ?prosite { {{join " " (as-iriref iri)}} }{{/if}}
-  {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
+    ?prosite dcterms:identifier ?id ;
+      rdfs:label ?label .
+  
+    {{#if iri}}VALUES ?prosite { {{join " " (as-iriref iri)}} }{{/if}}
+    {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
   }
 }
 """

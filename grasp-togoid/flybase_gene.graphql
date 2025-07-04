@@ -14,11 +14,11 @@ CONSTRUCT {
 }
 WHERE {
   GRAPH <http://togoid.dbcls.jp/graph/flybase_gene-label> {
-  ?flybase_gene dcterms:identifier ?id ;
-    rdfs:label ?label .
-
-  {{#if iri}}VALUES ?flybase_gene { {{join " " (as-iriref iri)}} }{{/if}}
-  {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
+    ?flybase_gene dcterms:identifier ?id ;
+      rdfs:label ?label .
+  
+    {{#if iri}}VALUES ?flybase_gene { {{join " " (as-iriref iri)}} }{{/if}}
+    {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
   }
 }
 """

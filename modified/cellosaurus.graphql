@@ -13,6 +13,7 @@ CONSTRUCT {
   ?cellosaurus :label ?label .
 }
 WHERE {
+  GRAPH <http://togoid.dbcls.jp/graph/cellosaurus-label> {
   ?cellosaurus dcterms:identifier ?cvclid ;
     rdfs:label ?label .
 
@@ -25,6 +26,7 @@ WHERE {
     }
   {{/if}}
   BIND (strafter(?cvclid, "CVCL_") AS ?id)
+  }
 }
 """
 type cellosaurus {

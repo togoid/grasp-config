@@ -1,0 +1,5 @@
+- FlybaseProtein flybase_protein:FBpp0071677:
+  - dcterms:identifier:
+    - id: "FBpp0071677"
+  - rdfs:label:
+    - label: "a-PA"

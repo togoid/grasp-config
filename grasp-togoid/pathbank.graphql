@@ -14,11 +14,11 @@ CONSTRUCT {
 }
 WHERE {
   GRAPH <http://togoid.dbcls.jp/graph/pathbank-label> {
-  ?pathbank dcterms:identifier ?id ;
-    rdfs:label ?label .
-
-  {{#if iri}}VALUES ?pathbank { {{join " " (as-iriref iri)}} }{{/if}}
-  {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
+    ?pathbank dcterms:identifier ?id ;
+      rdfs:label ?label .
+  
+    {{#if iri}}VALUES ?pathbank { {{join " " (as-iriref iri)}} }{{/if}}
+    {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
   }
 }
 """

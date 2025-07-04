@@ -34,5 +34,5 @@ WHERE {
 type hp_phenotype {
   iri: String!
   id: String!
-  label: [String!]
+  label: String!
 }

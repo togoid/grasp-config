@@ -14,11 +14,11 @@ CONSTRUCT {
 }
 WHERE {
   GRAPH <http://togoid.dbcls.jp/graph/refseq_rna-label> {
-  ?refseq_rna dcterms:identifier ?id ;
-    rdfs:label ?label .
-
-  {{#if iri}}VALUES ?refseq_rna { {{join " " (as-iriref iri)}} }{{/if}}
-  {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
+    ?refseq_rna dcterms:identifier ?id ;
+      rdfs:label ?label .
+  
+    {{#if iri}}VALUES ?refseq_rna { {{join " " (as-iriref iri)}} }{{/if}}
+    {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
   }
 }
 """
