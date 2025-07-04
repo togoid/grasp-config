@@ -1,0 +1,27 @@
+"""
+--- endpoint ---
+https://rdfportal.org/pubchem/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+CONSTRUCT {
+  ?pubchem_compound :iri ?pubchem_compound .
+  ?pubchem_compound :id ?id .
+  ?pubchem_compound :label ?label .
+}
+WHERE {
+  ?pubchem_compound dcterms:identifier ?id ;
+    skos:prefLabel ?label .
+
+  {{#if iri}}VALUES ?pubchem_compound { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
+}
+"""
+type pubchem_compound {
+  iri: String!
+  id: String!
+  label: String!
+}
