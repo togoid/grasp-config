@@ -1,4 +1,4 @@
 endpoint:
-  - http://ep.dbcls.jp/togoid/sparql
+  - https://dx.dbcls.jp/togoid/sparql
   - graph:
     - http://togoid.dbcls.jp/graph/biosample-label
