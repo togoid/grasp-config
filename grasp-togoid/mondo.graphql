@@ -14,6 +14,7 @@ CONSTRUCT {
   ?mondo :label ?label .
   ?mondo :id ?id .
 }
+FROM <http://rdfportal.org/dataset/bioportal/mondo>
 WHERE {
   ?mondo a owl:Class ;
     rdfs:label ?label ;
