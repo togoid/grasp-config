@@ -13,7 +13,7 @@ CONSTRUCT {
   ?orphanet_phenotype :label ?label .
   ?orphanet_phenotype :id ?id .
 }
-FROM <http://rdfportal.org/dataset/bioportal/orphanet>
+FROM <http://rdfportal.org/dataset/bioportal/ordo>
 WHERE {
   ?orphanet_phenotype a owl:Class ;
     rdfs:label ?label ;
