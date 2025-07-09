@@ -6,30 +6,30 @@ https://rdfportal.org/bioportal/sparql
 PREFIX : <https://github.com/dbcls/grasp/ns/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX oboinowl: <http://www.geneontology.org/formats/oboInOwl#>
 
 CONSTRUCT {
-  ?efo :iri ?efo .
-  ?efo :label ?label .
-  ?efo :id ?id .
+  ?efo_disease :iri ?efo_disease .
+  ?efo_disease :label ?label .
+  ?efo_disease :id ?id .
 }
 WHERE {
-  ?efo a owl:Class ;
+  ?efo_disease a owl:Class ;
     rdfs:label ?label ;
     oboinowl:id ?efoid .
 
-  {{#if iri}}VALUES ?efo { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if iri}}VALUES ?efo_disease { {{join " " (as-iriref iri)}} }{{/if}}
   {{#if id}}
     VALUES ?efoid {
       {{#each id as |_id|}}
-        "EFO:{{_id}}"^^xsd:string
+        "EFO:{{_id}}"
       {{/each}}
     }
   {{/if}}
   BIND (strafter(?efoid, "EFO:") AS ?id)
 }
 """
-type efo {
+type efo_disease {
   iri: String!
   label: String!
   id: String!

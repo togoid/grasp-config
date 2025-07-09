@@ -12,7 +12,7 @@ type Query {
   cog(iri: [String] , id: [String] ): [cog]!
   doid(iri: [String] , id: [String] ): [doid]!
   ec(iri: [String] , id: [String] ): [ec]!
-  efo(iri: [String] , id: [String] ): [efo]!
+  efo_disease(iri: [String] , id: [String] ): [efo_disease]!
   ensembl_gene(iri: [String] , id: [String] ): [ensembl_gene]!
   ensembl_transcript(iri: [String] , id: [String] ): [ensembl_transcript]!
   flybase_gene(iri: [String] , id: [String] ): [flybase_gene]!
