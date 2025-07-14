@@ -8,24 +8,38 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX oboinowl: <http://www.geneontology.org/formats/oboInOwl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX obochebi: <http://purl.obolibrary.org/obo/chebi/>
 
 CONSTRUCT {
   ?chebi :iri ?chebi .
   ?chebi :id ?id .
   ?chebi :label ?label .
+  ?chebi :mass ?mass .
 }
 WHERE {
-  ?chebi a owl:Class ;
-    oboinowl:id ?chebiid ;
-    rdfs:label ?label .
-
-  {{#if iri}}VALUES ?chebi { {{join " " (as-iriref iri)}} }{{/if}}
-  {{#if id}}
-    VALUES ?chebiid {
-      {{#each id as |_id|}}
-        "CHEBI:{{_id}}"^^xsd:string
-      {{/each}}
+  GRAPH <http://rdf.ebi.ac.uk/dataset/chebi> {
+    ?chebi a owl:Class ;
+      oboinowl:id ?chebiid ;
+      rdfs:label ?label .
+    OPTIONAL {
+      ?chebi obochebi:mass ?mass_str .
+      BIND (xsd:float(?mass_str) as ?mass)
     }
+
+    {{#if iri}}VALUES ?chebi { {{join " " (as-iriref iri)}} }{{/if}}
+    {{#if id}}
+      VALUES ?chebiid {
+        {{#each id as |_id|}}
+          "CHEBI:{{_id}}"^^xsd:string
+        {{/each}}
+      }
+    {{/if}}
+  }
+  {{#if mass_upper}}
+    FILTER (?mass < {{mass_upper}})
+  {{/if}}
+  {{#if mass_lower}}
+    FILTER (?mass > {{mass_lower}})
   {{/if}}
   BIND (strafter(?chebiid, "CHEBI:") AS ?id)
 }
@@ -34,4 +48,5 @@ type chebi {
   iri: String!
   id: String!
   label: String!
+  mass: Float
 }

@@ -1,5 +1,0 @@
-- UniprotReferenceProteome uniprot_reference_proteome:UP000000625:
-  - dcterms:identifier:
-    - id: "UP000000625"
-  - rdfs:label:
-    - label: "Escherichia coli (strain K12)"

@@ -5,6 +5,10 @@
       - a: core:Structured_Name
       - core:fullName:
         - label: "Cyclin-dependent kinase 1"
+      - core:shortName?:
+        - short_name: "CDK1"
+  - core:reviewed:
+    - reviewed: true
 
 # TODO
 # TrEMBL の場合は core:submittedName なので SPARQL クエリに property path で書き換える

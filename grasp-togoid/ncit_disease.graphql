@@ -14,7 +14,7 @@ CONSTRUCT {
   ?ncit_disease :label ?label .
 }
 WHERE {
-  GRAPH <http://rdf.integbio.jp/dataset/bioportal/ncit> {
+  GRAPH <http://rdfportal.org/dataset/bioportal/ncit> {
     ?ncit_disease a owl:Class ;
       ncit:NHC0 ?id ;
       rdfs:label ?label .

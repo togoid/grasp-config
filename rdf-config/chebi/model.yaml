@@ -4,3 +4,5 @@
     - id: "CHEBI:17232"
   - rdfs:label:
     - label: "L-glutamic 5-semialdehyde"
+  - obochebi:mass*:
+    - mass: "131.12990"  # RDF 側で string 型なので、SPARQL で数値型にキャストするよう手動で書き換える。
