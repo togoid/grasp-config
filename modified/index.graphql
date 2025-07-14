@@ -5,13 +5,14 @@ type Query {
   bioproject(iri: [String] , id: [String] ): [bioproject]!
   biosample(iri: [String] , id: [String] ): [biosample]!
   cellosaurus(iri: [String] , id: [String] ): [cellosaurus]!
-  chebi(iri: [String] , id: [String] , mass_upper: Float, mass_lower: Float): [chebi]!
+  chebi(iri: [String] , id: [String] ): [chebi]!
   chembl_compound(iri: [String] , id: [String] ): [chembl_compound]!
   chembl_target(iri: [String] , id: [String] ): [chembl_target]!
   clinvar(iri: [String] , id: [String] ): [clinvar]!
   cog(iri: [String] , id: [String] ): [cog]!
   doid(iri: [String] , id: [String] ): [doid]!
   ec(iri: [String] , id: [String] ): [ec]!
+  efo_disease(iri: [String] , id: [String] ): [efo_disease]!
   ensembl_gene(iri: [String] , id: [String] ): [ensembl_gene]!
   ensembl_transcript(iri: [String] , id: [String] , transcript_flag: [String]): [ensembl_transcript]!
   flybase_gene(iri: [String] , id: [String] ): [flybase_gene]!
