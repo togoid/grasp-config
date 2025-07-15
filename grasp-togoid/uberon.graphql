@@ -13,6 +13,7 @@ CONSTRUCT {
   ?uberon :label ?label .
   ?uberon :id ?id .
 }
+FROM <http://rdfportal.org/dataset/bioportal/uberon>
 WHERE {
   ?uberon a owl:Class ;
     rdfs:label ?label ;

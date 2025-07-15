@@ -14,6 +14,7 @@ CONSTRUCT {
   ?doid :label ?label .
   ?doid :id ?id .
 }
+FROM <http://rdfportal.org/dataset/bioportal/doid>
 WHERE {
   ?doid a owl:Class ;
     rdfs:label ?label ;
@@ -23,7 +24,7 @@ WHERE {
   {{#if id}}
     VALUES ?doidid {
       {{#each id as |_id|}}
-        "DOID:{{_id}}"^^xsd:string
+        "DOID:{{_id}}"
       {{/each}}
     }
   {{/if}}

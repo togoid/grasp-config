@@ -13,6 +13,7 @@ CONSTRUCT {
   ?nando :label ?label .
   ?nando :id ?id .
 }
+FROM <http://rdfportal.org/dataset/bioportal/nando>
 WHERE {
   ?nando a owl:Class ;
     rdfs:label ?label ;

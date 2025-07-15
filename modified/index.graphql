@@ -14,7 +14,7 @@ type Query {
   ec(iri: [String] , id: [String] ): [ec]!
   efo_disease(iri: [String] , id: [String] ): [efo_disease]!
   ensembl_gene(iri: [String] , id: [String] ): [ensembl_gene]!
-  ensembl_transcript(iri: [String] , id: [String] ): [ensembl_transcript]!
+  ensembl_transcript(iri: [String] , id: [String] , transcript_flag: [String]): [ensembl_transcript]!
   flybase_gene(iri: [String] , id: [String] ): [flybase_gene]!
   flybase_protein(iri: [String] , id: [String] ): [flybase_protein]!
   flybase_transcript(iri: [String] , id: [String] ): [flybase_transcript]!
@@ -39,7 +39,7 @@ type Query {
   mondo(iri: [String] , id: [String] ): [mondo]!
   mp(iri: [String] , id: [String] ): [mp]!
   nando(iri: [String] , id: [String] ): [nando]!
-  ncbigene(iri: [String] , id: [String] ): [ncbigene]!
+  ncbigene(iri: [String] , id: [String] , type_of_gene: [String]): [ncbigene]!
   ncit_disease(iri: [String] , id: [String] ): [ncit_disease]!
   ncit_tissue(iri: [String] , id: [String] ): [ncit_tissue]!
   orphanet_phenotype(iri: [String] , id: [String] ): [orphanet_phenotype]!
@@ -59,15 +59,15 @@ type Query {
   rhea(iri: [String] , id: [String] ): [rhea]!
   rnacentral(iri: [String] , id: [String] ): [rnacentral]!
   sgd(iri: [String] , id: [String] ): [sgd]!
+  sio(iri: [String] , id: [String] ): [sio]!
   swisslipids(iri: [String] , id: [String] ): [swisslipids]!
   tair(iri: [String] , id: [String] ): [tair]!
   taxonomy(iri: [String] , id: [String] ): [taxonomy]!
   togovar(iri: [String] , id: [String] ): [togovar]!
   uberon(iri: [String] , id: [String] ): [uberon]!
-  uniprot(iri: [String] , id: [String] ): [uniprot]!
+  uniprot(iri: [String] , id: [String] , reviewed: [String]): [uniprot]!
   uniprot_mnemonic(iri: [String] , id: [String] ): [uniprot_mnemonic]!
   uniprot_proteome(iri: [String] , id: [String] ): [uniprot_proteome]!
-  uniprot_reference_proteome(iri: [String] , id: [String] ): [uniprot_reference_proteome]!
   vgnc(iri: [String] , id: [String] ): [vgnc]!
   wikipathways(iri: [String] , id: [String] ): [wikipathways]!
   wormbase_gene(iri: [String] , id: [String] ): [wormbase_gene]!

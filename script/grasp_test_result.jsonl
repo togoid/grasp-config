@@ -1,0 +1,71 @@
+{"id":"J01DD11","data":{"atc":[{"label":"cefpiramide"}]}}
+{"id":"PRJDB575","data":{"bioproject":[{"label":"Genome sequencing of Prevotella paludivivens JCM 13650"}]}}
+{"id":"SAMD00003683","data":{"biosample":[{"label":"3MeK27H3_WCE_Hyp_DLD-1"}]}}
+{"id":"7T24","data":{"cellosaurus":[{"label":"DA03971"}]}}
+{"id":"84824","data":{"chebi":[{"label":"aromatic L-alpha-amino acid zwitterion"}]}}
+{"id":"CHEMBL121649","data":{"chembl_compound":[{"label":"CHEMBL121649"}]}}
+{"id":"CHEMBL2788","data":{"chembl_target":[{"label":"Tubulin beta chain"}]}}
+{"id":"658761","data":{"clinvar":[{"label":"NM_198576.4(AGRN):c.3001C>A (p.Pro1001Thr)"}]}}
+{"id":"COG0130","data":{"cog":[{"label":"tRNA U55 pseudouridine synthase TruB, may also work on U342 of tmRNA"}]}}
+{"id":"9036","data":{"doid":[{"label":"parotid gland cancer"}]}}
+{"id":"1.6.3.1","data":{"ec":[{"label":"NAD(P)H oxidase (H2O2-forming)"}]}}
+{"id":"ENSG00000186283","data":{"ensembl_gene":[{"label":"TOR3A"}]}}
+{"id":"ENST00000638000","data":{"ensembl_transcript":[{"label":"ARID1B-235"}]}}
+{"id":"FBgn0040373","data":{"flybase_gene":[{"label":"CG3038"}]}}
+{"id":"FBpp0071677","data":{"flybase_protein":[{"label":"a-PA"}]}}
+{"id":"FBtr0304393","data":{"flybase_transcript":[{"label":"mir-2280-RB"}]}}
+{"id":"G42293RF","data":{"glytoucan":[{"label":"GlcA(b1-4)Xyl(b1-"}]}}
+{"id":"0005643","data":{"go":[{"label":"nuclear pore"}]}}
+{"id":"26199","data":{"hgnc":[{"label":"KATNBL1"}]}}
+{"id":"HMDB0029433","data":{"hmdb":[{"label":"L-2-Amino-4-methylenepentanedioic acid"}]}}
+{"id":"117","data":{"homologene":[{"label":"Gene conserved in Euteleostomi"}]}}
+{"id":"0032382","data":{"hp_inheritance":[{"label":"Uniparental disomy"}]}}
+{"id":"0001947","data":{"hp_phenotype":[{"label":"Renal tubular acidosis"}]}}
+{"id":"IPR038152","data":{"interpro":[{"label":"Carbamoyltransferase, C-terminal domain superfamily"}]}}
+{"id":"LMST01060010","data":{"lipidmaps":[{"label":"(22R,23R)-methylenecholesterol"}]}}
+{"id":"ash:AL1_RS04670","data":null}
+{"id":"lac","data":null}
+{"id":"C0264897","data":{"medgen":[{"label":"Accelerated atrioventricular conduction"}]}}
+{"id":"D002065","data":{"mesh":[{"label":"Buspirone"}]}}
+{"id":"1857242","data":{"mgi_allele":[{"label":"Rb1<tm1Tyj>"}]}}
+{"id":"2387184","data":{"mgi_gene":[{"label":"Mboat1"}]}}
+{"id":"2166359","data":{"mgi_genotype":[{"label":"Rb1<tm1Tyj>/Rb1<tm1Tyj>"}]}}
+{"id":"MI0003587","data":{"mirbase":[{"label":"MIR580"}]}}
+{"id":"MIMAT0000001","data":{"mirbase_mature":[{"label":"cel-let-7-5p"}]}}
+{"id":"0000115","data":{"mondo":[{"label":"Chiari malformation"}]}}
+{"id":"0000600","data":{"mp":[{"label":"liver hypoplasia"}]}}
+{"id":"1200461","data":{"nando":[{"label":"Rubinstein-Taybi syndrome"}]}}
+{"id":"63962027","data":{"ncbigene":[{"label":"GQX59_RS03430"}]}}
+{"id":"C48829","data":{"ncit_disease":[{"label":"Primary Lymphedema"}]}}
+{"id":"C12279","data":{"ncit_tissue":[{"label":"Supraglottis"}]}}
+{"id":"101078","data":{"orphanet_phenotype":[{"label":"X-linked Charcot-Marie-Tooth disease type 4"}]}}
+{"id":"SMP0000055","data":{"pathbank":[{"label":"Alanine Metabolism"}]}}
+{"id":"3PFQ","data":{"pdb":[{"label":"Crystal Structure and Allosteric Activation of Protein Kinase C beta II"}]}}
+{"id":"D5Y","data":{"pdb_ccd":[{"label":"methyl 3-(5-bromo-2,4-dioxo-3,4-dihydropyrimidin-1(2H)-yl)-L-alaninate"}]}}
+{"id":"PF03719","data":{"pfam":[{"label":"Small ribosomal subunit protein uS5, C-terminal"}]}}
+{"id":"PS01177","data":{"prosite":[{"label":"Anaphylatoxin domain signature."}]}}
+{"id":"PRU00498","data":{"prosite_prorule":[{"label":"N-glycosylation site"}]}}
+{"id":"9548669","data":{"pubchem_compound":[{"label":"2-Dehydro-3-deoxy-L-fuconate"}]}}
+{"id":"10572","data":{"pubchem_pathway":[{"label":"Transport of small molecules"}]}}
+{"id":"19281226","data":{"pubmed":[{"label":"Lipophilic lysine-spermine conjugates are potent polyamine transport inhibitors for use in combination with a polyamine biosynthesis inhibitor."}]}}
+{"id":"R-HSA-165159","data":{"reactome_pathway":[{"label":"MTOR signalling"}]}}
+{"id":"R-DRE-1482961","data":{"reactome_reaction":[{"label":"CDP-Cho and DAG are converted to PC by CEPT1 at the ER membrane"}]}}
+{"id":"XM_017013006","data":{"refseq_rna":[{"label":"PREDICTED: Homo sapiens adenylate cyclase 8 (ADCY8), transcript variant X3, mRNA."}]}}
+{"id":"1308312","data":{"rgd":[{"label":"Irf2bp1"}]}}
+{"id":"10253","data":{"rhea":[{"label":"H(+) + hydrogen sulfide + O-phospho-L-serine => L-cysteine + phosphate"}]}}
+{"id":"URS00000004BF_6239","data":{"rnacentral":[{"label":"Caenorhabditis elegans small nucleolar RNA F54F11.6"}]}}
+{"id":"S000003096","data":{"sgd":[{"label":"CWC23"}]}}
+{"id":"000000002","data":{"swisslipids":[{"label":"Ceramide (iso-d17:1(4E))"}]}}
+{"id":"AT3G60400","data":{"tair":[{"label":"SHOT1"}]}}
+{"id":"1171376","data":{"taxonomy":[{"label":"Salmonella enterica subsp. enterica serovar Typhimurium str. U288"}]}}
+{"id":"tgv100005930","data":{"togovar":[{"label":"chr7:g.49813062C>T"}]}}
+{"id":"0002115","data":{"uberon":[{"label":"jejunum"}]}}
+{"id":"A0A174V9D2","data":{"uniprot":[{"label":"Clostripain"}]}}
+{"id":"2ABA_ORYSJ","data":{"uniprot_mnemonic":[{"label":"Serine/threonine protein phosphatase 2A 55 kDa regulatory subunit B alpha isoform"}]}}
+{"id":"UP000005640","data":{"uniprot_proteome":[{"label":"Homo sapiens (Human)"}]}}
+{"id":"39230","data":{"vgnc":[{"label":"CHRDL2"}]}}
+{"id":"WP1531","data":{"wikipathways":[{"label":"Vitamin D metabolism"}]}}
+{"id":"WBGene00016754","data":{"wormbase_gene":[{"label":"cebp-2"}]}}
+{"id":"XB-GENE-877040","data":{"xenbase_gene":[{"label":"naa30"}]}}
+{"id":"ZDB-GENE-030131-9947","data":{"zfin_gene":[{"label":"sb:cb92"}]}}
+{"id":"ZDB-TSCRIPT-090929-12612","data":{"zfin_transcript":[{"label":"si:ch73-186j5.4-001"}]}}
