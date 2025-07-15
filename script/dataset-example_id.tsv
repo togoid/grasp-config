@@ -16,6 +16,7 @@ dbsnp	rs746303788
 doid	9036
 drugbank	DB15589
 ec	1.6.3.1
+efo_disease	0008560
 ensembl_gene	ENSG00000186283
 ensembl_protein	ENSP00000365411
 ensembl_transcript	ENST00000638000
