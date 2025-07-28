@@ -7,16 +7,19 @@ PREFIX : <https://github.com/dbcls/grasp/ns/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 CONSTRUCT {
   ?nando :iri ?nando .
   ?nando :label ?label .
   ?nando :id ?id .
+  ?nando :label_ja ?label_ja .
 }
 FROM <http://rdfportal.org/dataset/bioportal/nando>
 WHERE {
   ?nando a owl:Class ;
     rdfs:label ?label ;
+    skos:prefLabel ?label_ja ;
     dct:identifier ?nandoid .
 
   {{#if iri}}VALUES ?nando { {{join " " (as-iriref iri)}} }{{/if}}
@@ -35,4 +38,5 @@ type nando {
   iri: String!
   label: String!
   id: String!
+  label_ja: String
 }
