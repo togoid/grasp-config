@@ -12,11 +12,20 @@ CONSTRUCT {
   ?taxonomy :iri ?taxonomy .
   ?taxonomy :id ?id .
   ?taxonomy :label ?label .
+  ?taxonomy :genbank_common_name ?genbank_common_name .
+  ?taxonomy :common_name ?common_name .
 }
 WHERE {
   ?taxonomy a ddbj:Taxon ;
     dct:identifier ?id ;
     rdfs:label ?label .
+
+  OPTIONAL {
+    ?taxonomy ddbj:genbankCommonName ?genbank_common_name .
+  }
+  OPTIONAL {
+    ?taxonomy ddbj:commonName ?common_name .
+  }
 
   {{#if iri}}VALUES ?taxonomy { {{join " " (as-iriref iri)}} }{{/if}}
   {{#if id}}
@@ -32,4 +41,6 @@ type taxonomy {
   iri: String!
   id: Int!
   label: String!
+  genbank_common_name: [String]
+  common_name: [String]
 }
