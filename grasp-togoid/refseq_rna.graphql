@@ -1,6 +1,6 @@
 """
 --- endpoint ---
-https://dx.dbcls.jp/togoid/sparql
+https://rdfportal.org/primary/sparql
 
 --- sparql ---
 PREFIX : <https://github.com/dbcls/grasp/ns/>
@@ -13,7 +13,7 @@ CONSTRUCT {
   ?refseq_rna :label ?label .
 }
 WHERE {
-  GRAPH <http://togoid.dbcls.jp/graph/refseq_rna-label> {
+  GRAPH <http://rdfportal.org/dataset/togoid/label/refseq_rna> {
     ?refseq_rna dcterms:identifier ?id ;
       rdfs:label ?label .
   

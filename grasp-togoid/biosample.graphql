@@ -1,6 +1,6 @@
 """
 --- endpoint ---
-https://dx.dbcls.jp/togoid/sparql
+https://rdfportal.org/primary/sparql
 
 --- sparql ---
 PREFIX : <https://github.com/dbcls/grasp/ns/>
@@ -13,7 +13,7 @@ CONSTRUCT {
   ?biosample :label ?label .
 }
 WHERE {
-  GRAPH <http://togoid.dbcls.jp/graph/biosample-label> {
+  GRAPH <http://rdfportal.org/dataset/togoid/label/biosample> {
     ?biosample dct:identifier ?id ;
       rdfs:label ?label .
   

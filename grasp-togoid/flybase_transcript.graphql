@@ -1,6 +1,6 @@
 """
 --- endpoint ---
-https://dx.dbcls.jp/togoid/sparql
+https://rdfportal.org/primary/sparql
 
 --- sparql ---
 PREFIX : <https://github.com/dbcls/grasp/ns/>
@@ -13,7 +13,7 @@ CONSTRUCT {
   ?flybase_transcript :label ?label .
 }
 WHERE {
-  GRAPH <http://togoid.dbcls.jp/graph/flybase_transcript-label> {
+  GRAPH <http://rdfportal.org/dataset/togoid/label/flybase_transcript> {
     ?flybase_transcript dcterms:identifier ?id ;
       rdfs:label ?label .
   

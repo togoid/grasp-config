@@ -1,6 +1,6 @@
 """
 --- endpoint ---
-https://dx.dbcls.jp/togoid/sparql
+https://rdfportal.org/primary/sparql
 
 --- sparql ---
 PREFIX : <https://github.com/dbcls/grasp/ns/>
@@ -13,7 +13,7 @@ CONSTRUCT {
   ?uniprot_proteome :label ?label .
 }
 WHERE {
-  GRAPH <http://togoid.dbcls.jp/graph/uniprot_proteome-label> {
+  GRAPH <http://rdfportal.org/dataset/togoid/label/uniprot_proteome> {
     ?uniprot_proteome dcterms:identifier ?id ;
       rdfs:label ?label .
   
