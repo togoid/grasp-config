@@ -1,6 +1,6 @@
 """
 --- endpoint ---
-https://rdfportal.org/primary/sparql
+https://dx.dbcls.jp/togoid/sparql
 
 --- sparql ---
 PREFIX : <https://github.com/dbcls/grasp/ns/>
@@ -13,7 +13,7 @@ CONSTRUCT {
   ?mgi_genotype :label ?label .
 }
 WHERE {
-  GRAPH <http://rdfportal.org/dataset/togoid/label/mgi_genotype> {
+  GRAPH <http://togoid.dbcls.jp/graph/mgi_genotype-label> {
   ?mgi_genotype dcterms:identifier ?mgiid ;
     rdfs:label ?label .
 

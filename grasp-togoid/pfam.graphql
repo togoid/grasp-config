@@ -1,6 +1,6 @@
 """
 --- endpoint ---
-https://rdfportal.org/primary/sparql
+https://dx.dbcls.jp/togoid/sparql
 
 --- sparql ---
 PREFIX : <https://github.com/dbcls/grasp/ns/>
@@ -13,7 +13,7 @@ CONSTRUCT {
   ?pfam :label ?label .
 }
 WHERE {
-  GRAPH <http://rdfportal.org/dataset/togoid/label/pfam> {
+  GRAPH <http://togoid.dbcls.jp/graph/pfam-label> {
     ?pfam dcterms:identifier ?id ;
       rdfs:label ?label .
   

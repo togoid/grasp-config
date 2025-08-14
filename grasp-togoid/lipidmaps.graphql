@@ -1,6 +1,6 @@
 """
 --- endpoint ---
-https://rdfportal.org/primary/sparql
+https://dx.dbcls.jp/togoid/sparql
 
 --- sparql ---
 PREFIX : <https://github.com/dbcls/grasp/ns/>
@@ -13,7 +13,7 @@ CONSTRUCT {
   ?lipidmaps :label ?label .
 }
 WHERE {
-  GRAPH <http://rdfportal.org/dataset/togoid/label/lipidmaps> {
+  GRAPH <http://togoid.dbcls.jp/graph/lipidmaps-label> {
     ?lipidmaps dcterms:identifier ?id ;
       rdfs:label ?label .
   
