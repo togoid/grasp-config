@@ -8,6 +8,7 @@ type Query {
   chebi(iri: [String] , id: [String] , mass_upper: Float, mass_lower: Float): [chebi]!
   chembl_compound(iri: [String] , id: [String] ): [chembl_compound]!
   chembl_target(iri: [String] , id: [String] ): [chembl_target]!
+  cl(iri: [String] , id: [String] ): [cl]!
   clinvar(iri: [String] , id: [String] ): [clinvar]!
   cog(iri: [String] , id: [String] ): [cog]!
   doid(iri: [String] , id: [String] ): [doid]!
