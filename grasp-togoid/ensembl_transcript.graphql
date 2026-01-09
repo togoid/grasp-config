@@ -35,7 +35,7 @@ WHERE {
     {{#if transcript_flag}}
       VALUES ?filter_flag {
         {{#each transcript_flag as |_flag|}}
-          "{{_flag}}"^^xsd:string
+          "{{_flag}}"
         {{/each}}
       }
     {{/if}}
