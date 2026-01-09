@@ -30,6 +30,6 @@ do
 
         QUERY="$(echo $QUERY)"
         # echo $QUERY
-        curl -sS -X POST -H "Content-Type: application/json" -d "{ \"query\": \"$QUERY\"}" $URL | jq -c --arg id "$id" '{id: $id, data: .data}'
+        curl -sS -X POST -H "Content-Type: application/json" -d "{ \"query\": \"$QUERY\"}" $URL | jq -r -c --arg id "$id" --arg ds "$ds" 'if .data != null then [$ds, $id, (.data|to_entries[0].value[0].label)] else [$ds, $id, ""] end | @tsv'
     fi
 done
