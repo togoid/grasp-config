@@ -5,7 +5,7 @@ usage() {
     echo "Usage: $0 <ID_TSV> <CONFIG_DIR> [URL]"
     echo "  ID_TSV     : dataset-example_id.tsv"
     echo "  CONFIG_DIR : grasp config directory"
-    echo "  URL        : GraphQL API URL (default: https://rdfportal.org/grasp-togoid)"
+    echo "  URL        : GraphQL API URL (default: https://dx.dbcls.jp/grasp-togoid)"
     exit 1
 }
 
@@ -15,7 +15,7 @@ fi
 
 ID_TSV=$1
 CONFIG_DIR=$2
-URL=${3:-"https://rdfportal.org/grasp-togoid"}
+URL=${3:-"https://dx.dbcls.jp/grasp-togoid"}
 
 DATASET_LIST=($(ls "$CONFIG_DIR" | sed 's/\.[^.]*$//'))
 
