@@ -13,10 +13,12 @@ CONSTRUCT {
   ?go :iri ?go .
   ?go :id ?id .
   ?go :label ?label .
+  ?go :go_aspect ?go_aspect .
 }
 WHERE {
   ?go a owl:Class ;
     oboinowl:id ?goid ;
+    oboinowl:hasOBONamespace ?go_aspect ;
     rdfs:label ?label .
 
   {{#if iri}}VALUES ?go { {{join " " (as-iriref iri)}} }{{/if}}
@@ -29,10 +31,12 @@ WHERE {
     }
   {{/if}}
   BIND (strafter(?goid, "GO:") AS ?id)
+  {{#if go_aspect}}VALUES ?go_aspect { {{join " " (as-string go_aspect)}} }{{/if}}
 }
 """
 type go {
   iri: String!
   id: String!
   label: String!
+  go_aspect: String!
 }
