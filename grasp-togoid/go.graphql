@@ -13,20 +13,29 @@ CONSTRUCT {
   ?go :iri ?go .
   ?go :id ?id .
   ?go :label ?label .
+  ?go :go_aspect ?go_aspect .
 }
+FROM <http://rdfportal.org/ontology/go>
 WHERE {
   ?go a owl:Class ;
     oboinowl:id ?goid ;
+    oboinowl:hasOBONamespace ?go_aspect ;
     rdfs:label ?label .
 
   {{#if iri}}VALUES ?go { {{join " " (as-iriref iri)}} }{{/if}}
-#  {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
   {{#if id}}
     VALUES ?goid {
       {{#each id as |_id|}}
         "GO:{{_id}}"^^xsd:string
       {{/each}}
     }
+  {{/if}}
+  {{#if go_aspect}}
+  VALUES ?go_aspect {
+      {{#each go_aspect as |_go_aspect|}}
+        "{{_go_aspect}}"^^xsd:string
+      {{/each}}
+  }
   {{/if}}
   BIND (strafter(?goid, "GO:") AS ?id)
 }
@@ -35,4 +44,5 @@ type go {
   iri: String!
   id: String!
   label: String!
+  go_aspect: String!
 }

@@ -20,7 +20,7 @@ type Query {
   flybase_protein(iri: [String] , id: [String] ): [flybase_protein]!
   flybase_transcript(iri: [String] , id: [String] ): [flybase_transcript]!
   glytoucan(iri: [String] , id: [String] ): [glytoucan]!
-  go(iri: [String] , id: [String] ): [go]!
+  go(iri: [String] , id: [String] , go_aspect: [String] ): [go]!
   hgnc(iri: [String] , id: [String] ): [hgnc]!
   hmdb(iri: [String] , id: [String] ): [hmdb]!
   homologene(iri: [String] , id: [String] ): [homologene]!
