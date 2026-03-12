@@ -15,9 +15,11 @@ CONSTRUCT {
   ?ensembl_transcript :label ?label .
   ?ensembl_transcript :transcript_flag ?transcript_flag .
 }
+FROM <http://rdfportal.org/dataset/ensembl>
+FROM <http://rdfportal.org/dataset/ensembl_ontology>
+FROM <http://rdfportal.org/dataset/ensembl-glossary>
 WHERE {
-  GRAPH <http://rdfportal.org/dataset/ensembl> {
-    ?ensembl_transcript a terms:EnsemblTranscript ;
+  ?ensembl_transcript a terms:EnsemblTranscript ;
       dcterms:identifier ?id ;
       rdfs:label ?label .
     {{#if transcript_flag}}
@@ -39,7 +41,6 @@ WHERE {
         {{/each}}
       }
     {{/if}}
-  }
 }
 """
 type ensembl_transcript {
