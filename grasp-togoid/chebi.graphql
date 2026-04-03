@@ -30,7 +30,7 @@ WHERE {
     {{#if id}}
       VALUES ?chebiid {
         {{#each id as |_id|}}
-          "CHEBI:{{_id}}"^^xsd:string
+          "CHEBI:{{_id}}"
         {{/each}}
       }
     {{/if}}
