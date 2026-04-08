@@ -14,7 +14,7 @@ type Query {
   doid(iri: [String] , id: [String] ): [doid]!
   ec(iri: [String] , id: [String] ): [ec]!
   efo_disease(iri: [String] , id: [String] ): [efo_disease]!
-  ensembl_gene(iri: [String] , id: [String] ): [ensembl_gene]!
+  ensembl_gene(iri: [String] , id: [String], is_alternate_seq: [String] ): [ensembl_gene]!
   ensembl_transcript(iri: [String] , id: [String] , transcript_flag: [String]): [ensembl_transcript]!
   flybase_gene(iri: [String] , id: [String] ): [flybase_gene]!
   flybase_protein(iri: [String] , id: [String] ): [flybase_protein]!

@@ -7,18 +7,31 @@ PREFIX : <https://github.com/dbcls/grasp/ns/>
 PREFIX terms: <http://rdf.ebi.ac.uk/terms/ensembl/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX so: <http://purl.obolibrary.org/obo/so#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
 
 CONSTRUCT {
   ?ensembl_gene :iri ?ensembl_gene .
   ?ensembl_gene :id ?id .
   ?ensembl_gene :label ?label .
+  ?ensembl_gene :chromosome ?chromosome .
+  ?ensembl_gene :is_alternate_seq ?is_alternate_seq .
 }
 WHERE {
   GRAPH <http://rdfportal.org/dataset/ensembl> {
     ?ensembl_gene a terms:EnsemblGene ;
+      obo:RO_0002162 ?taxon ;
       dcterms:identifier ?id ;
-      rdfs:label ?label .
-  
+      rdfs:label ?label ;
+      so:part_of ?chromosome_uri .
+
+    FILTER (STRSTARTS (STR(?chromosome_uri), "http://rdf.ebi.ac.uk/resource/ensembl/"))
+    BIND (REPLACE(STR(?chromosome_uri), "^.*/", "") AS ?chromosome)
+    BIND (IF((?taxon = <http://ensembl.org/Homo_sapiens>) && (STRLEN(?chromosome) > 2), "true", "false") AS ?is_alternate_seq)
+    {{#if is_alternate_seq}}
+    FILTER (?is_alternate_seq = "{{is_alternate_seq}}")
+    {{/if}}
+
     {{#if iri}}VALUES ?ensembl_gene { {{join " " (as-iriref iri)}} }{{/if}}
     {{#if id}}VALUES ?id { {{join " " (as-string id)}} }{{/if}}
   }
@@ -28,4 +41,6 @@ type ensembl_gene {
   iri: String!
   id: String!
   label: String!
+  chromosome: String!
+  is_alternate_seq: String!
 }
