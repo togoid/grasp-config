@@ -12,6 +12,7 @@ CONSTRUCT {
   ?pubchem_compound :id ?id .
   ?pubchem_compound :label ?label .
 }
+FROM <http://rdf.ncbi.nlm.nih.gov/pubchem/compound>
 WHERE {
   ?pubchem_compound dcterms:identifier ?id ;
     skos:prefLabel ?label .
