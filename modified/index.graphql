@@ -9,6 +9,7 @@ type Query {
   chembl_compound(iri: [String] , id: [String] ): [chembl_compound]!
   chembl_target(iri: [String] , id: [String] ): [chembl_target]!
   cl(iri: [String] , id: [String] ): [cl]!
+  clo(iri: [String] , id: [String] ): [clo]!
   clinvar(iri: [String] , id: [String] ): [clinvar]!
   cog(iri: [String] , id: [String] ): [cog]!
   doid(iri: [String] , id: [String] ): [doid]!

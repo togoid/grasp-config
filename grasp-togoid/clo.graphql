@@ -1,0 +1,36 @@
+"""
+--- endpoint ---
+https://rdfportal.org/bioportal/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+
+CONSTRUCT {
+  ?clo :iri ?clo .
+  ?clo :label ?label .
+  ?clo :id ?id .
+}
+FROM <http://rdfportal.org/dataset/bioportal/clo>
+WHERE {
+  ?clo a owl:Class ;
+    rdfs:label ?label .
+
+  {{#if iri}}VALUES ?clo { {{join " " (as-iriref iri)}} }{{/if}}
+  {{#if id}}
+    VALUES ?clo {
+      {{#each id as |_id|}}
+        obo:CLO_{{_id}}
+      {{/each}}
+    }
+  {{/if}}
+  BIND (strafter(STR(?clo), "CLO_") AS ?id)
+}
+"""
+type clo {
+  iri: String!
+  label: String!
+  id: String!
+}
