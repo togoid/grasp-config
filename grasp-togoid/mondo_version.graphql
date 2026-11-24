@@ -1,0 +1,27 @@
+"""
+--- endpoint ---
+https://rdfportal.org/bioportal/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX mondo: <http://purl.obolibrary.org/obo/mondo/>
+
+CONSTRUCT {
+  <http://rdfportal.org/dataset/bioportal/mondo> :version_iri ?version_iri .
+  <http://rdfportal.org/dataset/bioportal/mondo> :date ?date .
+  <http://rdfportal.org/dataset/bioportal/mondo> :markdown ?markdown .
+}
+FROM <http://rdfportal.org/dataset/bioportal/mondo>
+{
+  mondo:mondo-simple.owl owl:versionInfo ?date ;
+                         owl:versionIRI ?version_iri .
+  BIND (CONCAT("[MONDO (release ", ?date, ")](", STR(?version_iri), ")") AS ?markdown)
+}
+"""
+type mondo_version {
+  version_iri: String!
+  markdown: String!
+  date: String!
+}

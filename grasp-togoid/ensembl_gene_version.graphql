@@ -1,0 +1,28 @@
+"""
+--- endpoint ---
+https://rdfportal.org/ebi/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX terms: <http://rdf.ebi.ac.uk/terms/ensembl/>
+PREFIX so: <http://purl.obolibrary.org/obo/so#>
+
+CONSTRUCT {
+  <http://rdfportal.org/dataset/ensembl> :version ?version .
+  <http://rdfportal.org/dataset/ensembl> :markdown ?markdown .
+}
+WHERE {
+  GRAPH <http://rdfportal.org/dataset/ensembl> {
+    [] a terms:EnsemblGene ;
+       so:part_of ?chr .
+    FILTER (STRSTARTS(STR(?chr), "http://rdf.ebi.ac.uk/resource/ensembl/"))
+    BIND (STRBEFORE(STRAFTER(STR(?chr), "http://rdf.ebi.ac.uk/resource/ensembl/"), "/") AS ?version)
+    BIND (CONCAT("[Ensembl ", ?version, "](https://ensembl.org/). Based on [dumped table files](https://ftp.ensembl.org/pub/current/mysql/), [the RDF version](https://rdfportal.org/dataset/ensembl/) has been created by DBCLS.") AS ?markdown)
+  }
+}
+LIMIT 1
+"""
+type ensembl_gene_version {
+  version: String!
+  markdown: String!
+}

@@ -1,0 +1,24 @@
+"""
+--- endpoint ---
+https://nanbyodata.jp/sparql
+
+--- sparql ---
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+CONSTRUCT {
+  <http://nanbyodata.jp/ontology/nando.owl#> :version_iri ?version_iri .
+  <http://nanbyodata.jp/ontology/nando.owl#> :date ?date .
+  <http://nanbyodata.jp/ontology/nando.owl#> :markdown ?markdown .
+}
+WHERE {
+  <http://nanbyodata.jp/ontology/nando.owl#> owl:versionInfo ?date ;
+                                             owl:versionIRI ?version_iri .
+  BIND (CONCAT("[NANDO (release ", ?date, ")](", STR(?version_iri), ")") AS ?markdown)
+}
+"""
+type nando_version {
+  version_iri: String!
+  markdown: String!
+  date: String!
+}

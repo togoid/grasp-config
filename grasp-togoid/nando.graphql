@@ -1,6 +1,6 @@
 """
 --- endpoint ---
-https://rdfportal.org/bioportal/sparql
+https://nanbyodata.jp/sparql
 
 --- sparql ---
 PREFIX : <https://github.com/dbcls/grasp/ns/>
@@ -15,7 +15,6 @@ CONSTRUCT {
   ?nando :id ?id .
   ?nando :label_ja ?label_ja .
 }
-FROM <http://rdfportal.org/dataset/bioportal/nando>
 WHERE {
   ?nando a owl:Class ;
     rdfs:label ?label ;

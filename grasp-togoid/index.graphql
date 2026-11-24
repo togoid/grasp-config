@@ -76,4 +76,7 @@ type Query {
   xenbase_gene(iri: [String] , id: [String] ): [xenbase_gene]!
   zfin_gene(iri: [String] , id: [String] ): [zfin_gene]!
   zfin_transcript(iri: [String] , id: [String] ): [zfin_transcript]!
+  ensembl_gene_version: ensembl_gene_version
+  mondo_version: mondo_version
+  nando_version: nando_version
 }
